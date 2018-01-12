@@ -1,0 +1,18 @@
+def checkEven(InputData):
+    if(InputData%2==0):
+        print(InputData,"is an even number")
+        if(InputData%4==0):
+            print(InputData,"is divissile by 4 too")
+    else:print("Number is odd")
+
+def checkDivide(num,check):
+    if(num%check==0):
+        print(check,"divides evenly into",num,"successfully")
+    else:print("Sorry","Division failed")
+
+num=int(input("Hi there! please give me a number: "))
+check=int(input("Give another no to check: "))
+
+
+#checkEven(5)
+checkDivide(num,check)

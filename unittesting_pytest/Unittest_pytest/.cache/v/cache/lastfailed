@@ -1,0 +1,5 @@
+{
+  "test_DBuseFixture.py": true,
+  "test_ParameterizeTC.py::test_checkSqaure[7-50]": true,
+  "test_website.py": true
+}

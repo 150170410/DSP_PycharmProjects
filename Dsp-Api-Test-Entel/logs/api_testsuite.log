@@ -1,0 +1,161 @@
+11/01/2018 03:53:22 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666202.01
+11/01/2018 03:53:22 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:53:22 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:53:23 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT132"}
+11/01/2018 03:53:23 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.34999990463 sec.
+11/01/2018 03:53:23 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666203.37
+11/01/2018 03:53:23 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:53:23 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT132/23/56/Apple/SW2/4G
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT132"}
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] ACT132
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.31599998474 sec.
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666204.68
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT132', 'ICCID_subscriber': 8956010000079999999L}
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:53:24 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:53:26 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Uncontroller Error in the getContract service: HTTP Error (different to 404)","txn_ID":"ACT132","valid":1,"IMEI":"","MSISDN":"","PACKflag":"","validMSISDN":0}
+11/01/2018 03:53:26 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 2.31399989128 sec.
+11/01/2018 03:55:02 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666302.1
+11/01/2018 03:55:02 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:55:02 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:55:03 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT133"}
+11/01/2018 03:55:03 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.4430000782 sec.
+11/01/2018 03:55:03 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666303.56
+11/01/2018 03:55:03 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:55:03 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT133/23/56/Apple/SW2/4G
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT133"}
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] ACT133
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.47900009155 sec.
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666305.04
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT133', 'ICCID_subscriber': 8956010000079999999L}
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:55:05 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:55:07 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"ICCID obtained is different to ICCID entered","txn_ID":"ACT133","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:55:07 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 2.45000004768 sec.
+11/01/2018 03:57:45 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666465.52
+11/01/2018 03:57:45 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:57:45 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:57:46 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT134"}
+11/01/2018 03:57:46 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.45700001717 sec.
+11/01/2018 03:57:46 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666466.97
+11/01/2018 03:57:46 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:57:46 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT134/23/56/Apple/SW2/4G
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT134"}
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] ACT134
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.39900016785 sec.
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666468.38
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT134', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:57:48 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:57:50 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Contract is suspended","txn_ID":"ACT134","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:57:50 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 2.35599994659 sec.
+11/01/2018 03:58:02 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666482.65
+11/01/2018 03:58:02 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:58:02 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:58:04 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT135"}
+11/01/2018 03:58:04 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.43799996376 sec.
+11/01/2018 03:58:04 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666484.09
+11/01/2018 03:58:04 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:58:04 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT135/23/56/Apple/SW2/4G
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT135"}
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] ACT135
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.45599985123 sec.
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666485.55
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT135', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:58:05 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:58:09 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Uncontroller Error in the validateRequestProductOrder service: HTTP Error (different to 404)","txn_ID":"ACT135","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:58:09 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 3.45900011063 sec.
+11/01/2018 03:58:38 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666518.9
+11/01/2018 03:58:38 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:58:38 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:58:40 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT136"}
+11/01/2018 03:58:40 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.48599982262 sec.
+11/01/2018 03:58:40 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666520.39
+11/01/2018 03:58:40 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:58:40 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT136/23/56/Apple/SW2/4G
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT136"}
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] ACT136
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.42600011826 sec.
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666521.82
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT136', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:58:41 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:58:43 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Contract is suspended","txn_ID":"ACT136","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:58:43 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 2.03499984741 sec.
+11/01/2018 03:58:51 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666531.44
+11/01/2018 03:58:51 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:58:51 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:58:52 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT137"}
+11/01/2018 03:58:52 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.44899988174 sec.
+11/01/2018 03:58:52 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666532.89
+11/01/2018 03:58:52 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:58:52 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT137/23/56/Apple/SW2/4G
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT137"}
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] ACT137
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.44199991226 sec.
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666534.34
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT137', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:58:54 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:58:58 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Uncontroller Error in the GetContractSpec service: HTTP Error (different to 404) ","txn_ID":"ACT137","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:58:58 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 4.15300011635 sec.
+11/01/2018 03:59:22 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666562.31
+11/01/2018 03:59:22 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:59:22 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:59:23 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT138"}
+11/01/2018 03:59:23 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.31200003624 sec.
+11/01/2018 03:59:23 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666563.63
+11/01/2018 03:59:23 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:59:23 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT138/23/56/Apple/SW2/4G
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT138"}
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] ACT138
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.4430000782 sec.
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666565.07
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT138', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:59:25 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:59:26 PM [EntelRegressionSuite] [INFO] {"code":1,"message":"Contract is suspended","txn_ID":"ACT138","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
+11/01/2018 03:59:26 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 1.73900008202 sec.
+11/01/2018 03:59:35 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515666575.43
+11/01/2018 03:59:35 PM [EntelRegressionSuite] [INFO] test_01optionMenu Started
+11/01/2018 03:59:35 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+11/01/2018 03:59:36 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT139"}
+11/01/2018 03:59:36 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 1.44900012016 sec.
+11/01/2018 03:59:36 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515666576.89
+11/01/2018 03:59:36 PM [EntelRegressionSuite] [INFO] test_02localizationnetw Started
+11/01/2018 03:59:36 PM [EntelRegressionSuite] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT139/23/56/Apple/SW2/4G
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT139"}
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] ACT139
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 1.41599988937 sec.
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Started at 1515666578.31
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] ***************************
+
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': u'ACT139', 'ICCID_subscriber': 89560100000792428976L}
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] test_03id_document Started
+11/01/2018 03:59:38 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+11/01/2018 03:59:41 PM [EntelRegressionSuite] [INFO] {"code":0,"message":"Success","txn_ID":"ACT139","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"SIM","validMSISDN":0}
+11/01/2018 03:59:41 PM [EntelRegressionSuite] [INFO] ACT139
+11/01/2018 03:59:41 PM [EntelRegressionSuite] [INFO] Testcase test_03id_document Execution Time is 3.41000008583 sec.
+12/01/2018 04:02:18 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Started at 1515753138.37
+12/01/2018 04:02:18 PM [EntelRegressionSuite] [INFO] test_01optionMenu Triggered
+12/01/2018 04:02:18 PM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+12/01/2018 04:02:20 PM [EntelRegressionSuite] [INFO] Testcase test_01optionMenu Execution Time is 2.17500019073 sec.
+12/01/2018 04:02:20 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Started at 1515753140.57
+12/01/2018 04:02:20 PM [EntelRegressionSuite] [INFO] Testcase test_02localizationnetw Execution Time is 0.000999927520752 sec.
+12/01/2018 04:02:20 PM [EntelRegressionSuite] [INFO] Testcase test_03verifyresourceid Started at 1515753140.62
+12/01/2018 04:02:20 PM [EntelRegressionSuite] [INFO] Testcase test_03verifyresourceid Execution Time is 0.00200009346008 sec.

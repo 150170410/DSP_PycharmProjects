@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DSP_DEMO/.idea/DSP_DEMO.iml" filepath="$PROJECT_DIR$/../DSP_DEMO/.idea/DSP_DEMO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/.idea/Dsp-Api-Test-Entel.iml" filepath="$PROJECT_DIR$/../Dsp-Api-Test-Entel/.idea/Dsp-Api-Test-Entel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TESTCODES/.idea/TESTCODES.iml" filepath="$PROJECT_DIR$/../TESTCODES/.idea/TESTCODES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WebnairDSP.iml" filepath="$PROJECT_DIR$/.idea/WebnairDSP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../api-testing-master/.idea/api-testing-master.iml" filepath="$PROJECT_DIR$/../api-testing-master/.idea/api-testing-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dsp_robot/.idea/dsp_robot.iml" filepath="$PROJECT_DIR$/../dsp_robot/.idea/dsp_robot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../selenium-unittest-master/.idea/selenium-unittest-master.iml" filepath="$PROJECT_DIR$/../selenium-unittest-master/.idea/selenium-unittest-master.iml" />
+    </modules>
+  </component>
+</project>

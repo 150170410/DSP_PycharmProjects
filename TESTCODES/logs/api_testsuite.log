@@ -1,0 +1,28 @@
+08/01/2018 06:07:37 PM [TestCase-1] [INFO] Testcase test001_create Started at 1515415057.29
+08/01/2018 06:07:37 PM [TestCase-1] [INFO] test001_create STARTED
+08/01/2018 06:07:37 PM [TestCase-1] [INFO] #. Create post using POST /posts/, should succeed
+08/01/2018 06:07:37 PM [TestCase-1] [INFO] POST http://localhost:8008/dsp_nbi/getPortabilityData
+08/01/2018 06:07:38 PM [TestCase-1] [INFO] test001_create ENDED
+08/01/2018 06:07:38 PM [TestCase-1] [INFO] Testcase test001_create Execution Time is 1.14600014687 sec.
+08/01/2018 08:33:11 PM [TestCase-2] [INFO] Testcase test_view Started at 1515423791.15
+08/01/2018 08:33:11 PM [TestCase-2] [INFO] test_view STARTED
+08/01/2018 08:33:11 PM [TestCase-2] [INFO] #. View post using GET /posts/{id}, should succeed
+08/01/2018 08:33:11 PM [TestCase-2] [INFO] GET http://localhost:8008/dsp_nbi/getMessages/Test411/903323611631/9033378633300131/McRj2
+08/01/2018 08:33:13 PM [TestCase-2] [INFO] Testcase test_view Execution Time is 2.1099998951 sec.
+08/01/2018 08:34:43 PM [TestCase-1] [INFO] Testcase test_create Started at 1515423883.76
+08/01/2018 08:34:43 PM [TestCase-1] [INFO] test_create STARTED
+08/01/2018 08:34:43 PM [TestCase-1] [INFO] #. Create post using POST /posts/, should succeed
+08/01/2018 08:34:43 PM [TestCase-1] [INFO] POST http://localhost:8008/dsp_nbi/getPortabilityData
+08/01/2018 08:34:45 PM [TestCase-1] [INFO] Testcase test_create Execution Time is 2.17499995232 sec.
+08/01/2018 08:34:45 PM [TestCase-2] [INFO] Testcase test_view Started at 1515423885.94
+08/01/2018 08:34:45 PM [TestCase-2] [INFO] test_view STARTED
+08/01/2018 08:34:45 PM [TestCase-2] [INFO] #. View post using GET /posts/{id}, should succeed
+08/01/2018 08:34:45 PM [TestCase-2] [INFO] GET http://localhost:8008/dsp_nbi/getMessages/Test411/903323611631/9033378633300131/McRj2
+08/01/2018 08:34:48 PM [TestCase-2] [INFO] Testcase test_view Execution Time is 2.12700009346 sec.
+08/01/2018 08:37:45 PM [TestCase-2] [INFO] Testcase test_view Started at 1515424065.21
+08/01/2018 08:37:45 PM [TestCase-2] [INFO] test_view STARTED
+08/01/2018 08:37:45 PM [TestCase-2] [INFO] #. View post using GET /posts/{id}, should succeed
+08/01/2018 08:37:45 PM [TestCase-2] [INFO] GET http://localhost:8008/dsp_nbi/getMessages/Test411/903323611631/9033378633300131/McRj2
+08/01/2018 08:37:46 PM [TestCase-2] [INFO] #. Check response headers, should succeed
+08/01/2018 08:37:46 PM [TestCase-2] [INFO] test_view ENDED
+08/01/2018 08:37:46 PM [TestCase-2] [INFO] Testcase test_view Execution Time is 1.54999995232 sec.
