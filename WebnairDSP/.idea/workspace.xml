@@ -42,8 +42,8 @@
       <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="18" column="132" lean-forward="true" selection-start-line="18" selection-start-column="132" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="257">
+              <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_entel_PageObject.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_entel_PageObject.py">
+      <file leaf-file-name="entel_PageObject.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/entel_PageObject.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="41" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -84,8 +84,8 @@
       <file leaf-file-name="test_Legacy_ActivationSuite.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_ActivationSuite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="307">
+              <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -160,12 +160,12 @@
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/requirements" />
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/test_Legacy_Activation_Suite.py" />
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_Activation_Suite.py" />
-        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/entel_PageObject.py" />
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_Suite.py" />
-        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/config.ini" />
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/base.py" />
-        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_ActivationSuite.py" />
         <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_entel_PageObject.py" />
+        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/config.ini" />
+        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/entel_PageObject.py" />
+        <option value="$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_ActivationSuite.py" />
       </list>
     </option>
   </component>
@@ -249,7 +249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_entel_PageObject.TestPosts.test_loginuser">
+  <component name="RunManager" selected="Python tests.Unittests for testsuite.bin.entel_PageObject.TestPosts">
     <configuration name="Unittests for RestApiTest.TestPosts.test001_create" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,7 +278,7 @@
       <option name="_new_target" value="&quot;RestApiTest.TestPosts.test_view&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests for test_entel_PageObject.TestPosts.test_loginuser" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for testsuite.bin.entel_PageObject.TestPosts" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -289,7 +289,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Dsp-Api-Test-Entel" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_entel_PageObject.TestPosts.test_loginuser&quot;" />
+      <option name="_new_target" value="&quot;testsuite.bin.entel_PageObject.TestPosts&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
     <configuration name="Unittests in RestApiTest.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -306,7 +306,7 @@
       <option name="_new_target" value="&quot;$PROJECT_DIR$/../TESTCODES/RestApiTest.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="Unittests in test_entel_PageObject.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in entel_PageObject.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -317,7 +317,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Dsp-Api-Test-Entel" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_entel_PageObject.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/entel_PageObject.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -470,13 +470,13 @@
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in RestApiTest.py" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for RestApiTest.TestPosts.test001_create" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for RestApiTest.TestPosts.test_view" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_entel_PageObject.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_entel_PageObject.TestPosts.test_loginuser" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in entel_PageObject.py" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for testsuite.bin.entel_PageObject.TestPosts" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_entel_PageObject.TestPosts.test_loginuser" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_entel_PageObject.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for testsuite.bin.entel_PageObject.TestPosts" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in entel_PageObject.py" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for RestApiTest.TestPosts.test_view" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in RestApiTest.py" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for RestApiTest.TestPosts.test001_create" />
@@ -539,7 +539,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1598" height="858" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18205461" sideWeight="0.48440748" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -547,7 +546,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293011" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22589532" sideWeight="0.49485862" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22589532" sideWeight="0.49485862" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17750326" sideWeight="0.5155925" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -916,16 +915,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="18" column="132" lean-forward="true" selection-start-line="18" selection-start-column="132" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="257">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_entel_PageObject.py">
+    <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/entel_PageObject.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="86" column="8" lean-forward="true" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="41" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
@@ -934,10 +933,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Dsp-Api-Test-Entel/testsuite/bin/test_Legacy_ActivationSuite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="307">
+          <caret line="81" column="16" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
- 
+  </component>
+</project>

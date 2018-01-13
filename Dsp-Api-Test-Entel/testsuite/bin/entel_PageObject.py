@@ -37,7 +37,7 @@ class TestPosts(BaseTest):
         self.uri_biometricws = config['main']['biometricws']
         self.post_biometricws = ast.literal_eval(config['main']['post_biometricws'])
         self.uri_requestorder = config['main']['requestorder']
-        self.post_requestorder = ast.literal_eval(config['main']['post_requestorder'])
+
 
 
 
@@ -47,8 +47,10 @@ class TestPosts(BaseTest):
         self.lg('%s Triggered' % self._testID)
         return self.post_request_response(uri=self.uri_loginuser, data=self.post_loginUser)
 
-    def optionmenu(self):
+    def optionmenu(self,opType):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.      """
+
+        self.post_optionmenu.update({'option': opType})
 
         self.lg('%s Triggered' % self._testID)
         return self.post_request_response(uri=self.uri_optionmenu, data=self.post_optionmenu)
@@ -66,6 +68,7 @@ class TestPosts(BaseTest):
         self.post_verifyresourceid.update({'ICCID_subscriber': ICCID_subscriber})
 
         self.lg('%s Triggered' % self._testID)
+        self.lg(self.post_verifyresourceid)
         return self.post_request_response(uri=self.uri_verifyresourceid, data=self.post_verifyresourceid)
 
     def id_document(self,txn_id):
@@ -76,44 +79,68 @@ class TestPosts(BaseTest):
         self.lg('%s Triggered' % self._testID)
         return self.post_request_response(uri=self.uri_id_document, data=self.post_id_document)
 
+
     def populationcenter(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}."""
 
         self.post_populationcenter.update({'txn_ID': txn_id})
 
         self.lg('%s Triggered' % self._testID)
-        return self.post_request_response(uri=self.uri_populationcenter, data=self.post_id_document)
+        return self.post_request_response(uri=self.uri_populationcenter, data=self.post_populationcenter)
 
-    def getplantariff(self):
+    def getplantariff(self,txn_id,opType):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
-        pass
+        self.lg('%s Triggered' % self._testID)
+        return self.get_request_response(uri=self.uri_getplantariff + '/'+ txn_id+ '/'+ opType)
 
-    def selectplantariff(self):
+    def selectplantariff(self,txn_id,tarPlan):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
-        pass
 
-    def getavailablemsisdn(self):
+        self.lg('%s Triggered' % self._testID)
+        return self.get_request_response(uri=self.uri_selectplantariff + '/' + txn_id + '/' + tarPlan)
+
+    def getavailablemsisdn(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
-        pass
 
-    def selectnumber(self):
+        self.post_getavailablemsisdn.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_getavailablemsisdn, data=self.post_getavailablemsisdn)
+
+    def selectnumber(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
-        pass
 
-    def requestcontract(self):
+        self.post_selectnumber.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_selectnumber, data=self.post_selectnumber)
+
+    def requestcontract(self,txn_id,opType):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
-        pass
+        self.lg('%s Triggered' % self._testID)
 
-    def biometricws(self):
+        return self.get_request_response(uri=self.uri_requestcontract + '/' + txn_id + '/' + opType)
+
+    def contractacceptance(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
+        self.lg('%s Triggered' % self._testID)
+
+        return self.get_request_response(uri=self.uri_contractacceptance + '/' + txn_id + '/' + '/1/1')
+
+    def biometricws(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
-        pass
 
-    def requestorder(self):
+        self.post_biometricws.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_biometricws, data=self.post_biometricws)
+
+    def requestorder(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
-        pass
+        self.lg('%s Triggered' % self._testID)
 
-
+        return self.get_request_response(uri=self.uri_requestorder + '/' + txn_id )
 
     def getmessage(self):
         """ TestCase-2: Test case for test view post using GET /posts/{id}.*
