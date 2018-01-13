@@ -37,6 +37,8 @@ class TestPosts(BaseTest):
         self.uri_biometricws = config['main']['biometricws']
         self.post_biometricws = ast.literal_eval(config['main']['post_biometricws'])
         self.uri_requestorder = config['main']['requestorder']
+        self.uri_dataPorta= config['main']['dataporta']
+        self.post_dataPorta= config['main']['post_dataporta']
 
 
 
@@ -142,66 +144,39 @@ class TestPosts(BaseTest):
 
         return self.get_request_response(uri=self.uri_requestorder + '/' + txn_id )
 
+    def dataporta(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_dataPorta.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_dataPorta, data=self.post_dataPorta)
+
+
     def getmessage(self):
-        """ TestCase-2: Test case for test view post using GET /posts/{id}.*
-        **Test Scenario:**
-        #. View post using GET /posts/{id}, should succeed
-        #. Check response headers, should succeed
-        #. Check response body, should succeed
-        """
+        """ TestCase-2: Test case for test view post using GET /posts/{id}.*        """
 
         self.lg('%s STARTED' % self._testID)
 
-        self.lg('#. View post using GET /posts/{id}, should succeed')
-        # ***    response = self.get_request_response(uri='/posts/%d' % post["id"])
         response = self.get_request_response(uri=self.url_getmessage)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
-
-        # print (response.json())
-        # print(response.headers.keys())
-        # print(response.headers)
 
         self.lg('#. Check response headers, should succeed')
         [self.assertIn(header, response.headers.keys()) for header in response_headers.keys()]
         [self.assertEqual(response_headers[header], response.headers[header]) for header in response_headers.keys()]
 
-        # self.lg('#. Check response body, should succeed')
-        # self.assertEqual(type(response.json()), types.DictType)
-        # [self.assertEqual(response.json()[key], post[key]) for key in response.json().keys()]
-
         self.lg('%s ENDED' % self._testID)
-        # ----------------------------------------------------------
 
     def getPortabilityData(self):
-        """ TestCase-1: Test case for test create post using POST /posts/.*
-        **Test Scenario:**
-        #. Create post using POST /posts/, should succeed
-        #. Check response headers, should succeed
-        #. Check response body, should succeed
-        """
+        """ TestCase-1: Test case for test create post using POST /posts/.        """
         self.lg('%s STARTED' % self._testID)
 
-        self.lg('#. Create post using POST /posts/, should succeed')
-        # ***    response = self.post_request_response(uri='/posts', data=post)
         response = self.post_request_response(uri=self.url_getPortabilityData, data=self.post_getPortabilityData)
 
         self.lg(response.json())
 
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
-
-        # print (response.json())
-        # print('***************************')
-        # print(response.headers)
-
-
-        # self.lg('#. Check response headers, should succeed')
-        # [self.assertIn(header, response.headers.keys()) for header in response_headers.keys()]
-        # [self.assertEqual(response_headers[header], response.headers[header]) for header in response_headers.keys()]
-        #
-        # self.lg('#. Check response body, should succeed')
-        # self.assertEqual(type(response.json()), types.DictType)
-        # self.assertEqual(response.json(), posturi)
 
         self.lg('%s ENDED' % self._testID)
