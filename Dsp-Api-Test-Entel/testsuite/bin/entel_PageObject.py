@@ -37,9 +37,12 @@ class TestPosts(BaseTest):
         self.uri_biometricws = config['main']['biometricws']
         self.post_biometricws = ast.literal_eval(config['main']['post_biometricws'])
         self.uri_requestorder = config['main']['requestorder']
-        self.uri_dataPorta= config['main']['dataporta']
-        self.post_dataPorta= config['main']['post_dataporta']
-
+        self.uri_dataporta= config['main']['dataporta']
+        self.post_dataporta= ast.literal_eval(config['main']['post_dataporta'])
+        self.uri_dataswap=config['main']['dataswap']
+        self.post_dataswap=ast.literal_eval(config['main']['post_dataswap'])
+        self.uri_swapreason=config['main']['swapreason']
+        self.post_swapreason=ast.literal_eval(config['main']['post_swapreason'])
 
 
 
@@ -147,11 +150,26 @@ class TestPosts(BaseTest):
     def dataporta(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
-        self.post_dataPorta.update({'txn_ID': txn_id})
+        self.post_dataporta.update({'txn_ID': txn_id})
 
         self.lg('%s Triggered' % self._testID)
-        return self.post_request_response(uri=self.uri_dataPorta, data=self.post_dataPorta)
+        return self.post_request_response(uri=self.uri_dataporta, data=self.post_dataporta)
 
+    def dataswap(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_dataswap.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_dataswap, data=self.post_dataswap)
+
+    def swapreason(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_swapreason.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_swapreason, data=self.post_swapreason)
 
     def getmessage(self):
         """ TestCase-2: Test case for test view post using GET /posts/{id}.*        """
