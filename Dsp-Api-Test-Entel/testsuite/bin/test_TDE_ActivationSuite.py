@@ -1,9 +1,9 @@
 
 from  testsuite.bin.entel_PageObject import *
 
-class ValidateLegacyVenta(TestPosts):
+class ValidateTDEVenta(TestPosts):
     def __init__(self,*args, **kwargs):
-        super(ValidateLegacyVenta, self).__init__(*args, **kwargs)
+        super(ValidateTDEVenta, self).__init__(*args, **kwargs)
 
 
     def test_01loginUser(self):
