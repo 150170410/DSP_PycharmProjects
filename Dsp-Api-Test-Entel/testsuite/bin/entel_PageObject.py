@@ -43,7 +43,12 @@ class TestPosts(BaseTest):
         self.post_dataswap=ast.literal_eval(config['main']['post_dataswap'])
         self.uri_swapreason=config['main']['swapreason']
         self.post_swapreason=ast.literal_eval(config['main']['post_swapreason'])
-
+        self.uri_portabilityquery=config['main']['portabilityquery']
+        self.post_portabilityquery=ast.literal_eval(config['main']['post_portabilityquery'])
+        self.uri_sendportabilityresult=config['main']['sendportabilityresult']
+        self.post_sendportabilityresult=ast.literal_eval(config['main']['post_sendportabilityresult'])
+        self.uri_validatemaximumLines=config['main']['validatemaximumLines']
+        self.post_validatemaximumLines = ast.literal_eval(config['main']['post_validatemaximumLines'])
 
 
     def loginuser(self):
@@ -171,6 +176,31 @@ class TestPosts(BaseTest):
         self.lg('%s Triggered' % self._testID)
         return self.post_request_response(uri=self.uri_swapreason, data=self.post_swapreason)
 
+    def portabilityquery(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_portabilityquery.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_portabilityquery, data=self.post_portabilityquery)
+
+
+    def sendportabilityresult(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_sendportabilityresult.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_sendportabilityresult, data=self.post_sendportabilityresult)
+
+    def validatemaximumLines(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_validatemaximumLines.update({'txn_ID': txn_id})
+
+        self.lg('%s Triggered' % self._testID)
+        return self.post_request_response(uri=self.uri_validatemaximumLines, data=self.post_validatemaximumLines)
+
     def getmessage(self):
         """ TestCase-2: Test case for test view post using GET /posts/{id}.*        """
 
@@ -198,3 +228,15 @@ class TestPosts(BaseTest):
         self.assertTrue(response.ok)
 
         self.lg('%s ENDED' % self._testID)
+
+    def checkDBData(self,checkQuerry):
+        self.lg("__DB connection Started__")
+        con = cx_Oracle.connect('DSP_MAIN/DSP_MAIN@localhost:8007/ENTELDSP')
+        cur = con.cursor()
+        cur.execute(checkQuerry);
+        return cur
+        # for row in cur:
+        #     print (row)
+        cur.close()
+        con.close()
+        self.lg("__DB connection closed Successfully__")

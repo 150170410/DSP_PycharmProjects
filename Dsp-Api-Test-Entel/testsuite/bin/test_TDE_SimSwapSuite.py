@@ -26,6 +26,8 @@ class ValidateTDESimSwap(TestPosts):
         ICCID_subscriber = '89560100000792428977'
         opType = 'Sim Swap'
 
+        txn_id = 'ACT148'
+
         # response=self.optionmenu(opType)
         #
         # self.lg(response.text)
@@ -33,11 +35,7 @@ class ValidateTDESimSwap(TestPosts):
         # self.assertTrue(response.ok)
         # self.assertEqual(response.text.split(',')[0].split(':')[1],'0',response.text.split(',')[1])
 
-        txn_id='ACT148'
-
         #txn_id= response.text.split(',')[2].split(':')[1].split('"')[1]    #Returning txn_id
-
-
 
     def test_03localizationnetw(self):
         """ test_03localizationnetw: Test case for test view post using GET /posts/{id}.                                 """

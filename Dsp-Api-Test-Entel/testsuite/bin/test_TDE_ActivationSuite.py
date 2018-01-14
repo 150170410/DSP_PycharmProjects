@@ -94,8 +94,8 @@ class ValidateTDEVenta(TestPosts):
         self.assertEqual(response.text.split(',')[0].split(':')[1],'0',response.text.split(',')[1])
         self.lg(response.text.split(',')[2].split(':')[1].split('"')[1])
 
-    def test_08getplantariff(self):
-        """ test_08getplantariff: Test case for test view post using GET /posts/{id}.                                 """
+    def test_08selectplantariff(self):
+        """ test_08selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
         tarPlan = "PO_ADDON_BOLSA_100MB_1HR"
 
         response=self.selectplantariff(txn_id,tarPlan)

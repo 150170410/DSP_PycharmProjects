@@ -8,6 +8,7 @@ import json
 import requests
 from unittest import TestCase
 from testconfig import config
+import cx_Oracle
 
 
 
@@ -63,3 +64,4 @@ class BaseTest(TestCase):
         self.lg('POST %s' % self.url + uri)
         return self.session.post(self.url + uri, data=json.dumps(data), headers=headers, timeout=30,
                                  allow_redirects=False)
+
