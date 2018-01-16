@@ -1,8 +1,9 @@
+
 from  testsuite.bin.entel_PageObject import *
 
-class ValidateTDEVenta(TestPosts):
+class ValidateTDEPortability(TestPosts):
     def __init__(self,*args, **kwargs):
-        super(ValidateTDEVenta, self).__init__(*args, **kwargs)
+        super(ValidateTDEPortability, self).__init__(*args, **kwargs)
 
 
     def test_01loginUser(self):
@@ -20,8 +21,8 @@ class ValidateTDEVenta(TestPosts):
         global tarPlan
 
         txn_id = 'ACT188'
-        opType = 'venta'
-        ICCID_subscriber = '89560100000792429971'
+        opType = 'Portability'
+        ICCID_subscriber = '89560100000792429972'
         tarPlan = "PO_ADDON_BOLSA_100MB_1HR"
 
         response = self.optionmenu(opType)
@@ -34,13 +35,15 @@ class ValidateTDEVenta(TestPosts):
         response=self.localizationnetw(txn_id)
         self.lg(response.text)
 
+
     def test_04verifyresourceid(self):
         """ test_04verifyresourceid: Test case for test view post using GET /posts/{id}.                                 """
+
         try:
             response = self.verifyresourceid(txn_id, ICCID_subscriber)
             self.lg(response.text)
 
-        except AssertionError, e:
+        except Exception, e:
             self.lg(e.message)
             self.lg("Re-triggering since reponse code is not as expected")
             response = self.verifyresourceid(txn_id, ICCID_subscriber)
@@ -58,44 +61,40 @@ class ValidateTDEVenta(TestPosts):
         response=self.populationcenter(txn_id)
         self.lg(response.text)
 
-    def test_07getplantariff(self):
-        """ test_07getplantariff: Test case for test view post using GET /posts/{id}.                                 """
+    def test_07dataporta(self):
+        """ test_07dataporta: Test case for test view post using GET /posts/{id}.                                 """
+
+        response = self.dataporta(txn_id)
+        self.lg(response.text)
+
+    def test_08getplantariff(self):
+        """ test_08getplantariff: Test case for test view post using GET /posts/{id}.                                 """
 
         response=self.getplantariff(txn_id,opType)
         self.lg(response.text)
 
-    def test_08selectplantariff(self):
-        """ test_08selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
+    def test_09selectplantariff(self):
+        """ test_09selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
 
         response=self.selectplantariff(txn_id,tarPlan)
         self.lg(response.text)
 
-    def test_09getavailablemsisdn(self):
-        """ test_09getavailablemsisdn: Test case for test view post using GET /posts/{id}.                                 """
-
-        response=self.getavailablemsisdn(txn_id)
-        self.lg(response.text)
-
-    def test_10selectnumber(self):
-        """ test_10selectnumber: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.selectnumber(txn_id)
-        self.lg(response.text)
-
-    def test_11requestcontract(self):
-        """ test_11requestcontract: Test case for test view post using GET /posts/{id}.                                 """
+    def test_10requestcontract(self):
+        """ test_10requestcontract: Test case for test view post using GET /posts/{id}.                                 """
 
         response = self.requestcontract(txn_id,opType)
         self.lg(response.text)
 
-    def test_12contractacceptance(self):
-        """ test_12contractacceptance: Test case for test view post using GET /posts/{id}.                                 """
+    def test_11contractacceptance(self):
+        """ test_11contractacceptance: Test case for test view post using GET /posts/{id}.                                 """
 
         response = self.contractacceptance(txn_id)
         self.lg(response.text)
 
-    def test_13biometricws(self):
-        """ test_13biometricws: Test case for test view post using GET /posts/{id}.                                 """
+
+    def test_12biometricws(self):
+        """ test_12biometricws: Test case for test view post using GET /posts/{id}.                                 """
+
         try:
             response = self.biometricws(txn_id)
             self.lg(response.text)
@@ -106,9 +105,8 @@ class ValidateTDEVenta(TestPosts):
             response = self.biometricws(txn_id)
             self.lg(response.text)
 
-    def test_14requestorder(self):
-        """ test_14requestorder: Test case for test view post using GET /posts/{id}.                                 """
+    def test_13requestorder(self):
+        """ test_13requestorder: Test case for test view post using GET /posts/{id}.                                 """
 
         response = self.requestorder(txn_id)
         self.lg(response.text)
-
