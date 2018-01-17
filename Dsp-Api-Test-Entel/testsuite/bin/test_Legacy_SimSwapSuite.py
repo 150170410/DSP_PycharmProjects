@@ -1,17 +1,15 @@
+from testsuite.bin.entel_PageObject import *
 
-from  testsuite.bin.entel_PageObject import *
 
 class ValidateTDESimSwap(TestPosts):
-    def __init__(self,*args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(ValidateTDESimSwap, self).__init__(*args, **kwargs)
-
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
 
         # response=self.loginuser()
         # self.lg(response.text)
-
 
     def test_02optionMenu(self):
         """ test_02optionMenu: Test case for test view post using GET /posts/{id}.                          """
@@ -25,7 +23,7 @@ class ValidateTDESimSwap(TestPosts):
 
         txn_id = 'ACT188'
         opType = 'Sim Swap'
-        ICCID_subscriber = '89560100000792429988'
+        ICCID_subscriber = '89560100000792427976'
         tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'
         legacy_localzn = '/YHT/BGF/3G'
         tde_localzn = '/23/56/Apple/SW2/4G'
@@ -37,7 +35,7 @@ class ValidateTDESimSwap(TestPosts):
     def test_03localizationnetw(self):
         """ test_03localizationnetw: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.localizationnetw(txn_id,tde_localzn)
+        response = self.localizationnetw(txn_id, legacy_localzn)
         self.lg(response.text)
 
     def test_04verifyresourceid(self):
@@ -49,20 +47,13 @@ class ValidateTDESimSwap(TestPosts):
     def test_05dataswap(self):
         """ test_05dataswap: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.dataswap(txn_id)
-        self.lg(response.text)
-
-
-    def test_06swapreason(self):
-        """ test_06swapreason: Test case for test view post using GET /posts/{id}.                                 """
-
-        response=self.swapreason(txn_id)
+        response = self.dataswap(txn_id)
         self.lg(response.text)
 
     def test_07requestcontract(self):
         """ test_07requestcontract: Test case for test view post using GET /posts/{id}.                                 """
 
-        response = self.requestcontract(txn_id,opType)
+        response = self.requestcontract(txn_id, opType)
         self.lg(response.text)
 
     def test_08contractacceptance(self):

@@ -77,11 +77,11 @@ class TestPosts(BaseTest):
         self.assertEqual(self.checkOprID(txn_id), 3)
         return response
 
-    def localizationnetw(self,txn_id):
+    def localizationnetw(self,txn_id,inparams):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.        """
 
         self.lg('%s Triggered' % self._testID)
-        response= self.get_request_response(uri='localizationNetw/'+txn_id+'/'+self.uri_localizationnetw)
+        response= self.get_request_response(uri=self.uri_localizationnetw+'/'+txn_id+inparams)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
@@ -108,13 +108,16 @@ class TestPosts(BaseTest):
         self.post_id_document.update({'txn_ID': txn_id})
 
         self.lg('%s Triggered' % self._testID)
+        self.lg(self.uri_id_document)
+        self.lg(self.post_id_document)
+
         response= self.post_request_response(uri=self.uri_id_document, data=self.post_id_document)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
+        self.lg(response.text)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
         self.assertEqual(self.checkOprID(txn_id), 6)
         return response
-
 
     def populationcenter(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}."""
@@ -259,6 +262,7 @@ class TestPosts(BaseTest):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 26)
         return response
 
     def portabilityquery(self,txn_id):
@@ -271,8 +275,8 @@ class TestPosts(BaseTest):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 30)
         return response
-
 
     def sendportabilityresult(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
@@ -284,6 +288,7 @@ class TestPosts(BaseTest):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 23)
         return response
 
     def validatemaximumLines(self,txn_id):
@@ -296,6 +301,7 @@ class TestPosts(BaseTest):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 31)
         return response
 
     def getmessage(self):
@@ -321,8 +327,6 @@ class TestPosts(BaseTest):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         return response
-
-
 
     def checkOprID(self,txn_id):
         """ TestCase-1: Test case for test create post using POST /posts/.        """

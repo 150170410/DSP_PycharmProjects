@@ -43,6 +43,7 @@ class BaseTest(TestCase):
         """
         Environment cleanup and logs collection.
         """
+        time.sleep(2)
         self.session.close()
         if hasattr(self, '_startTime'):
             executionTime = time.time() - self._startTime
