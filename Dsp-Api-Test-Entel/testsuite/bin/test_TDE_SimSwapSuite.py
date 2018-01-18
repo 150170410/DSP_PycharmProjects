@@ -23,9 +23,8 @@ class ValidateTDESimSwap(TestPosts):
         global legacy_localzn
         global tde_localzn
 
-        txn_id = 'ACT188'
+        ICCID_subscriber = config['main']['iccid_subscriber']
         opType = 'Sim Swap'
-        ICCID_subscriber = '89560100000792429988'
         tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'
         legacy_localzn = '/YHT/BGF/3G'
         tde_localzn = '/23/56/Apple/SW2/4G'

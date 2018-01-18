@@ -23,9 +23,9 @@ class ValidateTDEPortability(TestPosts):
         global legacy_localzn
         global tde_localzn
 
-        ICCID_subscriber = '89560100000792429996'
-        portedMsisdn='776543507'
-        portStatus='CPRABD'
+        ICCID_subscriber = config['main']['iccid_subscriber']
+        portedMsisdn = config['main']['portedmsisdn']
+        portStatus = config['main']['portstatus']
 
         opType = 'Portability'
         tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'

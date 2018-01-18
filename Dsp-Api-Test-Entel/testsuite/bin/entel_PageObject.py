@@ -47,6 +47,8 @@ class TestPosts(BaseTest):
         self.post_portabilityquery=ast.literal_eval(config['main']['post_portabilityquery'])
         self.uri_sendportabilityresult=config['main']['sendportabilityresult']
         self.post_sendportabilityresult=ast.literal_eval(config['main']['post_sendportabilityresult'])
+        self.uri_portaqueryresult=config['main']['portaqueryresult']
+        self.post_portaqueryresult=ast.literal_eval(config['main']['post_portaqueryresult'])
         self.uri_validatemaximumlines=config['main']['validatemaximumlines']
         self.post_validatemaximumlines = ast.literal_eval(config['main']['post_validatemaximumlines'])
 
@@ -226,10 +228,11 @@ class TestPosts(BaseTest):
         self.assertEqual(self.checkOprID(txn_id), 18)
         return response
 
-    def dataporta(self,txn_id):
+    def dataporta(self,txn_id,portedMsisdn):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
         self.post_dataporta.update({'txn_ID': txn_id})
+        self.post_dataporta.update({'telNumber': portedMsisdn})
 
         self.lg('%s Triggered' % self._testID)
         response= self.post_request_response(uri=self.uri_dataporta, data=self.post_dataporta)
@@ -290,6 +293,21 @@ class TestPosts(BaseTest):
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
         self.assertEqual(self.checkOprID(txn_id), 23)
         return response
+
+    def portaqueryresult(self,portedMsisdn,portStatus,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
+
+        self.post_portaqueryresult['portabilityUpdate'].update({'PortabilityMSISDN': portedMsisdn})
+        self.post_portaqueryresult['portabilityUpdate'].update({'PortabilityIdMessage': portStatus})
+
+        self.lg('%s Triggered' % self._testID)
+        response = self.post_request_response(uri=self.uri_portaqueryresult, data=self.post_portaqueryresult)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.ok)
+        self.assertEqual(response.text.split(',')[0].split(':')[2], '"0"', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 23)
+        return response
+
 
     def validatemaximumLines(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """

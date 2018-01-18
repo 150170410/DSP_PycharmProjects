@@ -1,9 +1,9 @@
 from testsuite.bin.entel_PageObject import *
 
 
-class ValidateTDESimSwap(TestPosts):
+class ValidateLegacySimSwap(TestPosts):
     def __init__(self, *args, **kwargs):
-        super(ValidateTDESimSwap, self).__init__(*args, **kwargs)
+        super(ValidateLegacySimSwap, self).__init__(*args, **kwargs)
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
@@ -21,9 +21,8 @@ class ValidateTDESimSwap(TestPosts):
         global legacy_localzn
         global tde_localzn
 
-        txn_id = 'ACT188'
+        ICCID_subscriber = config['main']['iccid_subscriber']
         opType = 'Sim Swap'
-        ICCID_subscriber = '89560100000792427976'
         tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'
         legacy_localzn = '/YHT/BGF/3G'
         tde_localzn = '/23/56/Apple/SW2/4G'

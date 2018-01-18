@@ -1,242 +1,343 @@
-13/01/2018 11:49:14 AM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1515824354.86
-13/01/2018 11:49:14 AM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 0.00300002098083 sec.
-13/01/2018 11:49:14 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1515824354.86
-13/01/2018 11:49:14 AM [test_02optionMenu] [INFO] test_02optionMenu Triggered
-13/01/2018 11:49:14 AM [test_02optionMenu] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
-13/01/2018 11:49:16 AM [test_02optionMenu] [INFO] {"code":0,"message":"Success","txn_ID":"ACT156"}
-13/01/2018 11:49:16 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 1.66799998283 sec.
-13/01/2018 11:49:16 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1515824356.53
-13/01/2018 11:49:16 AM [test_03localizationnetw] [INFO] test_03localizationnetw Triggered
-13/01/2018 11:49:16 AM [test_03localizationnetw] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/ACT156/23/56/Apple/SW2/4G
-13/01/2018 11:49:18 AM [test_03localizationnetw] [INFO] {"code":0,"message":"Success","txn_ID":"ACT156"}
-13/01/2018 11:49:18 AM [test_03localizationnetw] [INFO] ACT156
-13/01/2018 11:49:18 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 1.58200001717 sec.
-13/01/2018 11:49:18 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1515824358.12
-13/01/2018 11:49:18 AM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
-13/01/2018 11:49:18 AM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
-13/01/2018 11:49:20 AM [test_04verifyresourceid] [INFO] {"code":1,"message":"ICCID obtained is different to ICCID entered","txn_ID":"ACT156","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
-13/01/2018 11:49:20 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 2.19500017166 sec.
-13/01/2018 11:49:20 AM [test_05id_document] [INFO] Testcase test_05id_document Started at 1515824360.31
-13/01/2018 11:49:20 AM [test_05id_document] [INFO] test_05id_document Triggered
-13/01/2018 11:49:20 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
-13/01/2018 11:49:21 AM [test_05id_document] [INFO] {"code":1,"message":"Invalid operation received for the given transaction","apeMaterno":"","apePaterno":"","txn_ID":"ACT156","dni_blocked_flag":-1,"validLines":1,"validDni":1,"name":""}
-13/01/2018 11:49:21 AM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 1.49599981308 sec.
-13/01/2018 11:49:21 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1515824361.81
-13/01/2018 11:49:21 AM [test_06populationcenter] [INFO] test_06populationcenter Triggered
-13/01/2018 11:49:21 AM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
-13/01/2018 11:49:23 AM [test_06populationcenter] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156","valid":1,"coverageFlag":0}
-13/01/2018 11:49:23 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 1.83899998665 sec.
-13/01/2018 11:49:23 AM [test_07getplantariff] [INFO] Testcase test_07getplantariff Started at 1515824363.65
-13/01/2018 11:49:23 AM [test_07getplantariff] [INFO] test_07getplantariff Triggered
-13/01/2018 11:49:23 AM [test_07getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/ACT156/venta
-13/01/2018 11:49:25 AM [test_07getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156"}
-13/01/2018 11:49:25 AM [test_07getplantariff] [INFO] Testcase test_07getplantariff Execution Time is 1.78999996185 sec.
-13/01/2018 11:49:25 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1515824365.45
-13/01/2018 11:49:25 AM [test_08getplantariff] [INFO] test_08getplantariff Triggered
-13/01/2018 11:49:25 AM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/ACT156/PO_ADDON_BOLSA_100MB_1HR
-13/01/2018 11:49:26 AM [test_08getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156"}
-13/01/2018 11:49:26 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 1.46199989319 sec.
-13/01/2018 11:49:26 AM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Started at 1515824366.91
-13/01/2018 11:49:26 AM [test_09getavailablemsisdn] [INFO] test_09getavailablemsisdn Triggered
-13/01/2018 11:49:26 AM [test_09getavailablemsisdn] [INFO] POST http://localhost:8008/dsp_nbi/getAvailableMSISDN
-13/01/2018 11:49:28 AM [test_09getavailablemsisdn] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156"}
-13/01/2018 11:49:28 AM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Execution Time is 1.47600007057 sec.
-13/01/2018 11:49:28 AM [test_10selectnumber] [INFO] Testcase test_10selectnumber Started at 1515824368.39
-13/01/2018 11:49:28 AM [test_10selectnumber] [INFO] test_10selectnumber Triggered
-13/01/2018 11:49:28 AM [test_10selectnumber] [INFO] POST http://localhost:8008/dsp_nbi/selectNumber
-13/01/2018 11:49:29 AM [test_10selectnumber] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156"}
-13/01/2018 11:49:29 AM [test_10selectnumber] [INFO] Testcase test_10selectnumber Execution Time is 1.60699987411 sec.
-13/01/2018 11:49:29 AM [test_11requestcontract] [INFO] Testcase test_11requestcontract Started at 1515824369.99
-13/01/2018 11:49:29 AM [test_11requestcontract] [INFO] test_11requestcontract Triggered
-13/01/2018 11:49:29 AM [test_11requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/ACT156/venta
-13/01/2018 11:49:31 AM [test_11requestcontract] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156","textContract":"","bono_description":"","email":""}
-13/01/2018 11:49:31 AM [test_11requestcontract] [INFO] Testcase test_11requestcontract Execution Time is 1.69400000572 sec.
-13/01/2018 11:49:31 AM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Started at 1515824371.69
-13/01/2018 11:49:31 AM [test_12contractacceptance] [INFO] test_12contractacceptance Triggered
-13/01/2018 11:49:31 AM [test_12contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/ACT156//1/1
-13/01/2018 11:49:33 AM [test_12contractacceptance] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156"}
-13/01/2018 11:49:33 AM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Execution Time is 1.617000103 sec.
-13/01/2018 11:49:33 AM [test_13biometricws] [INFO] Testcase test_13biometricws Started at 1515824373.31
-13/01/2018 11:49:33 AM [test_13biometricws] [INFO] test_13biometricws Triggered
-13/01/2018 11:49:33 AM [test_13biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
-13/01/2018 11:49:34 AM [test_13biometricws] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156","resultBio":"","dni_blocked_flag":-1}
-13/01/2018 11:49:34 AM [test_13biometricws] [INFO] Testcase test_13biometricws Execution Time is 1.56399989128 sec.
-13/01/2018 11:49:34 AM [test_14requestorder] [INFO] Testcase test_14requestorder Started at 1515824374.87
-13/01/2018 11:49:34 AM [test_14requestorder] [INFO] test_14requestorder Triggered
-13/01/2018 11:49:34 AM [test_14requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/ACT156
-13/01/2018 11:49:36 AM [test_14requestorder] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT156","order_ID":-1,"MSISDN":"","shoppingCartID":"Test411"}
-13/01/2018 11:49:36 AM [test_14requestorder] [INFO] Testcase test_14requestorder Execution Time is 1.77700018883 sec.
-13/01/2018 11:54:04 AM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1515824644.44
-13/01/2018 11:54:04 AM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 0.0 sec.
-13/01/2018 11:54:04 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1515824644.44
-13/01/2018 11:54:04 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 0.0 sec.
-13/01/2018 11:54:04 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1515824644.44
-13/01/2018 11:54:04 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 0.0 sec.
-13/01/2018 11:54:04 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1515824644.44
-13/01/2018 11:54:04 AM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
-13/01/2018 11:54:04 AM [test_04verifyresourceid] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': 'ACT148', 'ICCID_subscriber': '89560100000792428977'}
-13/01/2018 11:54:04 AM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
-13/01/2018 11:54:11 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 7.21099996567 sec.
-13/01/2018 11:54:11 AM [test_05id_document] [INFO] Testcase test_05id_document Started at 1515824651.65
-13/01/2018 11:54:11 AM [test_05id_document] [INFO] test_05id_document Triggered
-13/01/2018 11:54:11 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
-13/01/2018 11:54:13 AM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 2.15400004387 sec.
-13/01/2018 11:54:13 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1515824653.8
-13/01/2018 11:54:13 AM [test_06populationcenter] [INFO] test_06populationcenter Triggered
-13/01/2018 11:54:13 AM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
-13/01/2018 11:54:15 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 2.1210000515 sec.
-13/01/2018 11:54:15 AM [test_07getplantariff] [INFO] Testcase test_07getplantariff Started at 1515824655.92
-13/01/2018 11:54:15 AM [test_07getplantariff] [INFO] test_07getplantariff Triggered
-13/01/2018 11:54:15 AM [test_07getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/ACT148/venta
-13/01/2018 11:54:18 AM [test_07getplantariff] [INFO] Testcase test_07getplantariff Execution Time is 2.14100003242 sec.
-13/01/2018 11:54:18 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1515824658.07
-13/01/2018 11:54:18 AM [test_08getplantariff] [INFO] test_08getplantariff Triggered
-13/01/2018 11:54:18 AM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/ACT148/PO_ADDON_BOLSA_100MB_1HR
-13/01/2018 11:54:20 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 2.03299999237 sec.
-13/01/2018 11:54:20 AM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Started at 1515824660.11
-13/01/2018 11:54:20 AM [test_09getavailablemsisdn] [INFO] test_09getavailablemsisdn Triggered
-13/01/2018 11:54:20 AM [test_09getavailablemsisdn] [INFO] POST http://localhost:8008/dsp_nbi/getAvailableMSISDN
-13/01/2018 11:54:22 AM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Execution Time is 2.02400016785 sec.
-13/01/2018 11:54:22 AM [test_10selectnumber] [INFO] Testcase test_10selectnumber Started at 1515824662.13
-13/01/2018 11:54:22 AM [test_10selectnumber] [INFO] test_10selectnumber Triggered
-13/01/2018 11:54:22 AM [test_10selectnumber] [INFO] POST http://localhost:8008/dsp_nbi/selectNumber
-13/01/2018 11:54:24 AM [test_10selectnumber] [INFO] Testcase test_10selectnumber Execution Time is 2.03999996185 sec.
-13/01/2018 11:54:24 AM [test_11requestcontract] [INFO] Testcase test_11requestcontract Started at 1515824664.17
-13/01/2018 11:54:24 AM [test_11requestcontract] [INFO] test_11requestcontract Triggered
-13/01/2018 11:54:24 AM [test_11requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/ACT148/venta
-13/01/2018 11:54:26 AM [test_11requestcontract] [INFO] Testcase test_11requestcontract Execution Time is 2.1289999485 sec.
-13/01/2018 11:54:26 AM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Started at 1515824666.3
-13/01/2018 11:54:26 AM [test_12contractacceptance] [INFO] test_12contractacceptance Triggered
-13/01/2018 11:54:26 AM [test_12contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/ACT148//1/1
-13/01/2018 11:54:28 AM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Execution Time is 2.01699995995 sec.
-13/01/2018 11:54:28 AM [test_13biometricws] [INFO] Testcase test_13biometricws Started at 1515824668.32
-13/01/2018 11:54:28 AM [test_13biometricws] [INFO] test_13biometricws Triggered
-13/01/2018 11:54:28 AM [test_13biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
-13/01/2018 11:54:30 AM [test_13biometricws] [INFO] Testcase test_13biometricws Execution Time is 2.01300001144 sec.
-13/01/2018 11:54:30 AM [test_14requestorder] [INFO] Testcase test_14requestorder Started at 1515824670.33
-13/01/2018 11:54:30 AM [test_14requestorder] [INFO] test_14requestorder Triggered
-13/01/2018 11:54:30 AM [test_14requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/ACT148
-13/01/2018 11:54:32 AM [test_14requestorder] [INFO] Testcase test_14requestorder Execution Time is 2.02500009537 sec.
-13/01/2018 12:04:48 PM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1515825288.51
-13/01/2018 12:04:48 PM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 0.00299978256226 sec.
-13/01/2018 12:04:48 PM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1515825288.51
-13/01/2018 12:04:48 PM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 0.0 sec.
-13/01/2018 12:04:48 PM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1515825288.51
-13/01/2018 12:04:48 PM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 0.0 sec.
-13/01/2018 12:04:48 PM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1515825288.51
-13/01/2018 12:04:48 PM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
-13/01/2018 12:04:48 PM [test_04verifyresourceid] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': 'ACT148', 'ICCID_subscriber': '89560100000792428977'}
-13/01/2018 12:04:48 PM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
-13/01/2018 12:04:50 PM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 2.1099998951 sec.
-13/01/2018 12:04:50 PM [test_05id_document] [INFO] Testcase test_05id_document Started at 1515825290.62
-13/01/2018 12:04:50 PM [test_05id_document] [INFO] test_05id_document Triggered
-13/01/2018 12:04:50 PM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
-13/01/2018 12:04:54 PM [test_05id_document] [INFO] {"code":1,"message":"Invalid operation received for the given transaction","apeMaterno":"","apePaterno":"","txn_ID":"ACT148","dni_blocked_flag":-1,"validLines":1,"validDni":1,"name":""}
-13/01/2018 12:04:54 PM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 4.15300011635 sec.
-13/01/2018 12:04:54 PM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1515825294.77
-13/01/2018 12:04:54 PM [test_06populationcenter] [INFO] test_06populationcenter Triggered
-13/01/2018 12:04:54 PM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
-13/01/2018 12:04:56 PM [test_06populationcenter] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","valid":1,"coverageFlag":0}
-13/01/2018 12:04:56 PM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 1.55999994278 sec.
-13/01/2018 12:04:56 PM [test_07getplantariff] [INFO] Testcase test_07getplantariff Started at 1515825296.33
-13/01/2018 12:04:56 PM [test_07getplantariff] [INFO] test_07getplantariff Triggered
-13/01/2018 12:04:56 PM [test_07getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/ACT148/venta
-13/01/2018 12:04:57 PM [test_07getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:04:57 PM [test_07getplantariff] [INFO] Testcase test_07getplantariff Execution Time is 1.51800012589 sec.
-13/01/2018 12:04:57 PM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1515825297.85
-13/01/2018 12:04:57 PM [test_08getplantariff] [INFO] test_08getplantariff Triggered
-13/01/2018 12:04:57 PM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/ACT148/PO_ADDON_BOLSA_100MB_1HR
-13/01/2018 12:04:59 PM [test_08getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:04:59 PM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 1.50900006294 sec.
-13/01/2018 12:04:59 PM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Started at 1515825299.36
-13/01/2018 12:04:59 PM [test_09getavailablemsisdn] [INFO] test_09getavailablemsisdn Triggered
-13/01/2018 12:04:59 PM [test_09getavailablemsisdn] [INFO] POST http://localhost:8008/dsp_nbi/getAvailableMSISDN
-13/01/2018 12:05:00 PM [test_09getavailablemsisdn] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:05:00 PM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Execution Time is 1.54999995232 sec.
-13/01/2018 12:05:00 PM [test_10selectnumber] [INFO] Testcase test_10selectnumber Started at 1515825300.91
-13/01/2018 12:05:00 PM [test_10selectnumber] [INFO] test_10selectnumber Triggered
-13/01/2018 12:05:00 PM [test_10selectnumber] [INFO] POST http://localhost:8008/dsp_nbi/selectNumber
-13/01/2018 12:05:02 PM [test_10selectnumber] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:05:02 PM [test_10selectnumber] [INFO] Testcase test_10selectnumber Execution Time is 1.57700014114 sec.
-13/01/2018 12:05:02 PM [test_11requestcontract] [INFO] Testcase test_11requestcontract Started at 1515825302.49
-13/01/2018 12:05:02 PM [test_11requestcontract] [INFO] test_11requestcontract Triggered
-13/01/2018 12:05:02 PM [test_11requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/ACT148/venta
-13/01/2018 12:05:04 PM [test_11requestcontract] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","textContract":"","bono_description":"","email":""}
-13/01/2018 12:05:04 PM [test_11requestcontract] [INFO] Testcase test_11requestcontract Execution Time is 1.53699994087 sec.
-13/01/2018 12:05:04 PM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Started at 1515825304.03
-13/01/2018 12:05:04 PM [test_12contractacceptance] [INFO] test_12contractacceptance Triggered
-13/01/2018 12:05:04 PM [test_12contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/ACT148//1/1
-13/01/2018 12:05:05 PM [test_12contractacceptance] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:05:05 PM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Execution Time is 1.53200006485 sec.
-13/01/2018 12:05:05 PM [test_13biometricws] [INFO] Testcase test_13biometricws Started at 1515825305.56
-13/01/2018 12:05:05 PM [test_13biometricws] [INFO] test_13biometricws Triggered
-13/01/2018 12:05:05 PM [test_13biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
-13/01/2018 12:05:07 PM [test_13biometricws] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","resultBio":"","dni_blocked_flag":-1}
-13/01/2018 12:05:07 PM [test_13biometricws] [INFO] Testcase test_13biometricws Execution Time is 1.5490000248 sec.
-13/01/2018 12:05:07 PM [test_14requestorder] [INFO] Testcase test_14requestorder Started at 1515825307.11
-13/01/2018 12:05:07 PM [test_14requestorder] [INFO] test_14requestorder Triggered
-13/01/2018 12:05:07 PM [test_14requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/ACT148
-13/01/2018 12:05:08 PM [test_14requestorder] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","order_ID":-1,"MSISDN":"","shoppingCartID":"Test411"}
-13/01/2018 12:05:08 PM [test_14requestorder] [INFO] Testcase test_14requestorder Execution Time is 1.87999987602 sec.
-13/01/2018 12:06:59 PM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1515825419.01
-13/01/2018 12:06:59 PM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 0.0 sec.
-13/01/2018 12:06:59 PM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1515825419.01
-13/01/2018 12:06:59 PM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 0.0 sec.
-13/01/2018 12:06:59 PM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1515825419.01
-13/01/2018 12:06:59 PM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 0.0 sec.
-13/01/2018 12:06:59 PM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1515825419.01
-13/01/2018 12:06:59 PM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
-13/01/2018 12:06:59 PM [test_04verifyresourceid] [INFO] {'IMEI_subscriber': '', 'MSISDN_subcriber': '', 'txn_ID': 'ACT148', 'ICCID_subscriber': '89560100000792428977'}
-13/01/2018 12:06:59 PM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
-13/01/2018 12:07:01 PM [test_04verifyresourceid] [INFO] {"code":1,"message":"ICCID obtained is different to ICCID entered","txn_ID":"ACT148","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"","validMSISDN":0}
-13/01/2018 12:07:01 PM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 2.30599999428 sec.
-13/01/2018 12:07:01 PM [test_05id_document] [INFO] Testcase test_05id_document Started at 1515825421.32
-13/01/2018 12:07:01 PM [test_05id_document] [INFO] test_05id_document Triggered
-13/01/2018 12:07:01 PM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
-13/01/2018 12:07:02 PM [test_05id_document] [INFO] {"code":1,"message":"Invalid operation received for the given transaction","apeMaterno":"","apePaterno":"","txn_ID":"ACT148","dni_blocked_flag":-1,"validLines":1,"validDni":1,"name":""}
-13/01/2018 12:07:02 PM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 1.60700011253 sec.
-13/01/2018 12:07:02 PM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1515825422.92
-13/01/2018 12:07:02 PM [test_06populationcenter] [INFO] test_06populationcenter Triggered
-13/01/2018 12:07:02 PM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
-13/01/2018 12:07:04 PM [test_06populationcenter] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","valid":1,"coverageFlag":0}
-13/01/2018 12:07:04 PM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 1.72699999809 sec.
-13/01/2018 12:07:04 PM [test_07getplantariff] [INFO] Testcase test_07getplantariff Started at 1515825424.65
-13/01/2018 12:07:04 PM [test_07getplantariff] [INFO] test_07getplantariff Triggered
-13/01/2018 12:07:04 PM [test_07getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/ACT148/venta
-13/01/2018 12:07:06 PM [test_07getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:07:06 PM [test_07getplantariff] [INFO] Testcase test_07getplantariff Execution Time is 1.56200003624 sec.
-13/01/2018 12:07:06 PM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1515825426.22
-13/01/2018 12:07:06 PM [test_08getplantariff] [INFO] test_08getplantariff Triggered
-13/01/2018 12:07:06 PM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/ACT148/PO_ADDON_BOLSA_100MB_1HR
-13/01/2018 12:07:07 PM [test_08getplantariff] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:07:07 PM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 1.53099989891 sec.
-13/01/2018 12:07:07 PM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Started at 1515825427.75
-13/01/2018 12:07:07 PM [test_09getavailablemsisdn] [INFO] test_09getavailablemsisdn Triggered
-13/01/2018 12:07:07 PM [test_09getavailablemsisdn] [INFO] POST http://localhost:8008/dsp_nbi/getAvailableMSISDN
-13/01/2018 12:07:09 PM [test_09getavailablemsisdn] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:07:09 PM [test_09getavailablemsisdn] [INFO] Testcase test_09getavailablemsisdn Execution Time is 1.53800010681 sec.
-13/01/2018 12:07:09 PM [test_10selectnumber] [INFO] Testcase test_10selectnumber Started at 1515825429.29
-13/01/2018 12:07:09 PM [test_10selectnumber] [INFO] test_10selectnumber Triggered
-13/01/2018 12:07:09 PM [test_10selectnumber] [INFO] POST http://localhost:8008/dsp_nbi/selectNumber
-13/01/2018 12:07:10 PM [test_10selectnumber] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:07:10 PM [test_10selectnumber] [INFO] Testcase test_10selectnumber Execution Time is 1.56999993324 sec.
-13/01/2018 12:07:10 PM [test_11requestcontract] [INFO] Testcase test_11requestcontract Started at 1515825430.86
-13/01/2018 12:07:10 PM [test_11requestcontract] [INFO] test_11requestcontract Triggered
-13/01/2018 12:07:10 PM [test_11requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/ACT148/venta
-13/01/2018 12:07:12 PM [test_11requestcontract] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","textContract":"","bono_description":"","email":""}
-13/01/2018 12:07:12 PM [test_11requestcontract] [INFO] Testcase test_11requestcontract Execution Time is 1.50900006294 sec.
-13/01/2018 12:07:12 PM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Started at 1515825432.36
-13/01/2018 12:07:12 PM [test_12contractacceptance] [INFO] test_12contractacceptance Triggered
-13/01/2018 12:07:12 PM [test_12contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/ACT148//1/1
-13/01/2018 12:07:13 PM [test_12contractacceptance] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148"}
-13/01/2018 12:07:13 PM [test_12contractacceptance] [INFO] Testcase test_12contractacceptance Execution Time is 1.58399987221 sec.
-13/01/2018 12:07:13 PM [test_13biometricws] [INFO] Testcase test_13biometricws Started at 1515825433.95
-13/01/2018 12:07:13 PM [test_13biometricws] [INFO] test_13biometricws Triggered
-13/01/2018 12:07:13 PM [test_13biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
-13/01/2018 12:07:15 PM [test_13biometricws] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","resultBio":"","dni_blocked_flag":-1}
-13/01/2018 12:07:15 PM [test_13biometricws] [INFO] Testcase test_13biometricws Execution Time is 1.8860001564 sec.
-13/01/2018 12:07:15 PM [test_14requestorder] [INFO] Testcase test_14requestorder Started at 1515825435.83
-13/01/2018 12:07:15 PM [test_14requestorder] [INFO] test_14requestorder Triggered
-13/01/2018 12:07:15 PM [test_14requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/ACT148
-13/01/2018 12:07:17 PM [test_14requestorder] [INFO] {"code":4,"message":"Invalid operation received for the given transaction","txn_ID":"ACT148","order_ID":-1,"MSISDN":"","shoppingCartID":"Test411"}
-13/01/2018 12:07:17 PM [test_14requestorder] [INFO] Testcase test_14requestorder Execution Time is 1.51699995995 sec.
+18/01/2018 10:01:31 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Started at 1516249891.41
+18/01/2018 10:01:31 AM [EntelRegressionSuite] [INFO] portaqueryresult Triggered
+18/01/2018 10:01:31 AM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:01:32 AM [EntelRegressionSuite] [INFO] {"responseCode"
+18/01/2018 10:01:34 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Execution Time is 3.39700007439 sec.
+18/01/2018 10:03:11 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Started at 1516249991.83
+18/01/2018 10:03:11 AM [EntelRegressionSuite] [INFO] portaqueryresult Triggered
+18/01/2018 10:03:11 AM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:03:13 AM [EntelRegressionSuite] [INFO] "1"
+18/01/2018 10:03:15 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Execution Time is 3.50800013542 sec.
+18/01/2018 10:03:40 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Started at 1516250020.43
+18/01/2018 10:03:40 AM [EntelRegressionSuite] [INFO] portaqueryresult Triggered
+18/01/2018 10:03:40 AM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:03:41 AM [EntelRegressionSuite] [INFO] "1"
+18/01/2018 10:03:43 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Execution Time is 3.51099991798 sec.
+18/01/2018 10:03:57 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Started at 1516250037.95
+18/01/2018 10:03:57 AM [EntelRegressionSuite] [INFO] portaqueryresult Triggered
+18/01/2018 10:03:57 AM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:03:59 AM [EntelRegressionSuite] [INFO] "1"
+18/01/2018 10:04:01 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Execution Time is 3.43299984932 sec.
+18/01/2018 10:04:49 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Started at 1516250089.11
+18/01/2018 10:04:49 AM [EntelRegressionSuite] [INFO] portaqueryresult Triggered
+18/01/2018 10:04:49 AM [EntelRegressionSuite] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:04:50 AM [EntelRegressionSuite] [INFO] "1"
+18/01/2018 10:04:52 AM [EntelRegressionSuite] [INFO] Testcase portaqueryresult Execution Time is 3.59200000763 sec.
+18/01/2018 10:06:45 AM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1516250205.19
+18/01/2018 10:06:47 AM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 2.00100016594 sec.
+18/01/2018 10:06:47 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1516250207.19
+18/01/2018 10:06:47 AM [test_02optionMenu] [INFO] test_02optionMenu Triggered
+18/01/2018 10:06:47 AM [test_02optionMenu] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+18/01/2018 10:06:48 AM [test_02optionMenu] [INFO] __DB connection Started__
+18/01/2018 10:06:49 AM [test_02optionMenu] [INFO] __DB connection closed Successfully__
+18/01/2018 10:06:49 AM [test_02optionMenu] [INFO] {"code":0,"message":"Success","txn_ID":"POR285"}
+18/01/2018 10:06:51 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 4.22499990463 sec.
+18/01/2018 10:06:51 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1516250211.42
+18/01/2018 10:06:51 AM [test_03localizationnetw] [INFO] test_03localizationnetw Triggered
+18/01/2018 10:06:51 AM [test_03localizationnetw] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/POR285/23/56/Apple/SW2/4G
+18/01/2018 10:06:52 AM [test_03localizationnetw] [INFO] __DB connection Started__
+18/01/2018 10:06:52 AM [test_03localizationnetw] [INFO] __DB connection closed Successfully__
+18/01/2018 10:06:52 AM [test_03localizationnetw] [INFO] {"code":0,"message":"Success","txn_ID":"POR285"}
+18/01/2018 10:06:54 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 3.56399989128 sec.
+18/01/2018 10:06:54 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1516250214.98
+18/01/2018 10:06:54 AM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
+18/01/2018 10:06:54 AM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+18/01/2018 10:06:58 AM [test_04verifyresourceid] [INFO] __DB connection Started__
+18/01/2018 10:06:58 AM [test_04verifyresourceid] [INFO] __DB connection closed Successfully__
+18/01/2018 10:06:58 AM [test_04verifyresourceid] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"SIM","validMSISDN":0}
+18/01/2018 10:07:00 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 5.31599998474 sec.
+18/01/2018 10:07:00 AM [test_05id_document] [INFO] Testcase test_05id_document Started at 1516250220.3
+18/01/2018 10:07:00 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:07:00 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:07:00 AM [test_05id_document] [INFO] {'txn_ID': u'POR285', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:07:00 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] {"code":1,"message":"Error of service","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR285","dni_blocked_flag":0,"validLines":0,"validDni":1,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] "message":"Error of service"
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] {'txn_ID': u'POR285', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:07:03 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:07:05 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR285","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:07:05 AM [test_05id_document] [INFO] __DB connection Started__
+18/01/2018 10:07:05 AM [test_05id_document] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:05 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR285","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:07:07 AM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 7.03500008583 sec.
+18/01/2018 10:07:07 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1516250227.34
+18/01/2018 10:07:07 AM [test_06populationcenter] [INFO] test_06populationcenter Triggered
+18/01/2018 10:07:07 AM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
+18/01/2018 10:07:10 AM [test_06populationcenter] [INFO] __DB connection Started__
+18/01/2018 10:07:10 AM [test_06populationcenter] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:10 AM [test_06populationcenter] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","valid":0,"coverageFlag":1}
+18/01/2018 10:07:12 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 4.92899990082 sec.
+18/01/2018 10:07:12 AM [test_07dataporta] [INFO] Testcase test_07dataporta Started at 1516250232.27
+18/01/2018 10:07:12 AM [test_07dataporta] [INFO] test_07dataporta Triggered
+18/01/2018 10:07:12 AM [test_07dataporta] [INFO] POST http://localhost:8008/dsp_nbi/dataPorta
+18/01/2018 10:07:15 AM [test_07dataporta] [INFO] __DB connection Started__
+18/01/2018 10:07:15 AM [test_07dataporta] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:15 AM [test_07dataporta] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","valid":0}
+18/01/2018 10:07:17 AM [test_07dataporta] [INFO] Testcase test_07dataporta Execution Time is 5.33799982071 sec.
+18/01/2018 10:07:17 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1516250237.6
+18/01/2018 10:07:17 AM [test_08getplantariff] [INFO] test_08getplantariff Triggered
+18/01/2018 10:07:17 AM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/POR285/Portability
+18/01/2018 10:07:21 AM [test_08getplantariff] [INFO] __DB connection Started__
+18/01/2018 10:07:21 AM [test_08getplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:21 AM [test_08getplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","planTariff":[{"tmCode":"PO_ADDON_BOLSA_100MB_1HR","isDefault":"","planDesc":"Bolsa 100 MB por 1 hora","planName":"Bolsa 100 MB por 1 hora","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_100MB_7DIAS","isDefault":"","planDesc":"Bolsa 100 MB vig 7 días","planName":"Bolsa 100 MB vig 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_123LDI","isDefault":"","planDesc":"Bolsa 123LDI","planName":"Bolsa 123LDI","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1GB_30DIAS","isDefault":"","planDesc":"Bolsa 1 GB vig 30 días","planName":"Bolsa 1 GB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1_5GB_7DIAS","isDefault":"","planDesc":"Bolsa 1,5 GB por 7 días","planName":"Bolsa 1,5 GB por 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_200MB_15DIAS","isDefault":"","planDesc":"Bolsa 200 MB vig 15 días","planName":"Bolsa 200 MB vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_15D","isDefault":"","planDesc":"Bolsa 250 MB por 15 días","planName":"Bolsa 250 MB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_3HR","isDefault":"","planDesc":"Bolsa 250 MB por 3 horas","planName":"Bolsa 250 MB por 3 horas","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250_250MB_15DIAS","isDefault":"","planDesc":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","planName":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_30MB_1DIA","isDefault":"","planDesc":"Bolsa 30 MB vig 1 día","planName":"Bolsa 30 MB vig 1 día","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_350MB_30DIAS","isDefault":"","planDesc":"Bolsa 350 MB vig 30 días","planName":"Bolsa 350 MB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_3GB_15DIAS","isDefault":"","planDesc":"Bolsa 3 GB por 15 días","planName":"Bolsa 3 GB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_500MB_30D","isDefault":"","planDesc":"Bolsa 500 MB por 30 días","planName":"Bolsa 500 MB por 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_50MB_1HR","isDefault":"","planDesc":"Bolsa 50 MB vig 1 hr","planName":"Bolsa 50 MB vig 1 hr","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_80SMS_TD_15DIAS","isDefault":"","planDesc":"Bolsa 80 SMS Todo Destino vig 15 días","planName":"Bolsa 80 SMS Todo Destino vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_900MB_2DIAS","isDefault":"","planDesc":"Bolsa 900 MB por 2 días","planName":"Bolsa 900 MB por 2 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ALOPERU_BOLIVIA","isDefault":"","planDesc":"Bolsa Aló Perú y Bolivia","planName":"Bolsa Aló Perú y Bolivia","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_FB_200MB_7","isDefault":"","planDesc":"Bolsa 200MB Facebook vig 7 dias","planName":"Bolsa 200MB Facebook vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA","isDefault":"","planDesc":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","planName":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_100MB","isDefault":"","planDesc":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_1GB","isDefault":"","planDesc":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","planName":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_400MB","isDefault":"","planDesc":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_500_AV","isDefault":"","planDesc":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","planName":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_15SMS","isDefault":"","planDesc":"Bolsa Roaming 15 SMS","planName":"Bolsa Roaming 15 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_25SMS","isDefault":"","planDesc":"Bolsa Roaming 25 SMS","planName":"Bolsa Roaming 25 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_35SMS","isDefault":"","planDesc":"Bolsa Roaming 35 SMS","planName":"Bolsa Roaming 35 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_PV_WHATSAPP","isDefault":"","planDesc":"Bolsa Roaming PV Whatsapp","planName":"Bolsa Roaming PV Whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_1GB_30D","isDefault":"","planDesc":"Bolsa de RRSS 1GB vig 30 dias","planName":"Bolsa de RRSS 1GB vig 30 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_250MB_7D","isDefault":"","planDesc":"Bolsa de RRSS 250MB vig 7 dias","planName":"Bolsa de RRSS 250MB vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_500MB_15D","isDefault":"","planDesc":"Bolsa de RRSS 500MB vig 15 dias","planName":"Bolsa de RRSS 500MB vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VIAJ_ROAM","isDefault":"","planDesc":"Bolsa viajera Roam 5 Min + 10 SMS","planName":"Bolsa viajera Roam 5 Min + 10 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VOICE_ILIM_FDS","isDefault":"","planDesc":"Bolsa Voice Ilimitada Fim de Semana","planName":"Bolsa Voice Ilimitada Fim de Semana","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_WAPP_100MB_3D","isDefault":"","planDesc":"Bolsa 100MB Whatsapp vig 3 dias","planName":"Bolsa 100MB Whatsapp vig 3 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_YTUBE_500MB_15D","isDefault":"","planDesc":"Bolsa 500MB Youtube + RRSS vig 15 dias","planName":"Bolsa 500MB Youtube + RRSS vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_FAF_ADDON_FAV_TD_DEST_50","isDefault":"","planDesc":"Numeros Favorito Todo Destino","planName":"Numeros Favorito Todo Destino","price":0.0,"numDays":0}]}
+18/01/2018 10:07:23 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 5.53500008583 sec.
+18/01/2018 10:07:23 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Started at 1516250243.14
+18/01/2018 10:07:23 AM [test_09selectplantariff] [INFO] test_09selectplantariff Triggered
+18/01/2018 10:07:23 AM [test_09selectplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/POR285/PO_ADDON_BOLSA_100MB_1HR
+18/01/2018 10:07:25 AM [test_09selectplantariff] [INFO] __DB connection Started__
+18/01/2018 10:07:25 AM [test_09selectplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:25 AM [test_09selectplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR285"}
+18/01/2018 10:07:27 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Execution Time is 4.67899990082 sec.
+18/01/2018 10:07:27 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Started at 1516250247.82
+18/01/2018 10:07:27 AM [test_10requestcontract] [INFO] test_10requestcontract Triggered
+18/01/2018 10:07:27 AM [test_10requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/POR285/Portability
+18/01/2018 10:07:29 AM [test_10requestcontract] [INFO] __DB connection Started__
+18/01/2018 10:07:29 AM [test_10requestcontract] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:29 AM [test_10requestcontract] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","textContract":"Portability contract\nHello ELIAS ELISEO CARCAMO Selecccionaste the tariff plan 'Bolsa 100 MB por 1 hora' with the following rates and conditions:\nBolsa 100 MB por 1 hora. Rate of the plan is  and is valid for \nThe contract will be dissolved if you do not perform refills, no show, no free outgoing traffic within 2 months ago. More information on www.entel.peru","bono_description":"","email":""}
+18/01/2018 10:07:31 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Execution Time is 3.8639998436 sec.
+18/01/2018 10:07:31 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Started at 1516250251.68
+18/01/2018 10:07:31 AM [test_11contractacceptance] [INFO] test_11contractacceptance Triggered
+18/01/2018 10:07:31 AM [test_11contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/POR285//1/1
+18/01/2018 10:07:33 AM [test_11contractacceptance] [INFO] __DB connection Started__
+18/01/2018 10:07:33 AM [test_11contractacceptance] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:33 AM [test_11contractacceptance] [INFO] {"code":0,"message":"Success","txn_ID":"POR285"}
+18/01/2018 10:07:35 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Execution Time is 3.56299996376 sec.
+18/01/2018 10:07:35 AM [test_12biometricws] [INFO] Testcase test_12biometricws Started at 1516250255.25
+18/01/2018 10:07:35 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:07:35 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:07:37 AM [test_12biometricws] [INFO] "message":"Some internal response validation error for validar_huellas_wsq service"
+18/01/2018 10:07:37 AM [test_12biometricws] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:07:37 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:07:37 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:07:55 AM [test_12biometricws] [INFO] __DB connection Started__
+18/01/2018 10:07:55 AM [test_12biometricws] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:55 AM [test_12biometricws] [INFO] {"code":0,"message":"success","txn_ID":"POR285","resultBio":"0","dni_blocked_flag":0}
+18/01/2018 10:07:57 AM [test_12biometricws] [INFO] Testcase test_12biometricws Execution Time is 22.1319999695 sec.
+18/01/2018 10:07:57 AM [test_13requestorder] [INFO] Testcase test_13requestorder Started at 1516250277.38
+18/01/2018 10:07:57 AM [test_13requestorder] [INFO] test_13requestorder Triggered
+18/01/2018 10:07:57 AM [test_13requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/POR285
+18/01/2018 10:07:59 AM [test_13requestorder] [INFO] __DB connection Started__
+18/01/2018 10:07:59 AM [test_13requestorder] [INFO] __DB connection closed Successfully__
+18/01/2018 10:07:59 AM [test_13requestorder] [INFO] {"code":0,"message":"Success","txn_ID":"POR285","order_ID":809334747,"MSISDN":"776543506","shoppingCartID":"11344"}
+18/01/2018 10:08:01 AM [test_13requestorder] [INFO] Testcase test_13requestorder Execution Time is 4.132999897 sec.
+18/01/2018 10:08:01 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Started at 1516250281.51
+18/01/2018 10:08:01 AM [test_14portaqueryresult] [INFO] test_14portaqueryresult Triggered
+18/01/2018 10:08:01 AM [test_14portaqueryresult] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:08:03 AM [test_14portaqueryresult] [INFO] __DB connection Started__
+18/01/2018 10:08:03 AM [test_14portaqueryresult] [INFO] __DB connection closed Successfully__
+18/01/2018 10:08:05 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Execution Time is 3.68000006676 sec.
+18/01/2018 10:09:11 AM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1516250351.41
+18/01/2018 10:09:13 AM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 2.00099992752 sec.
+18/01/2018 10:09:13 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1516250353.42
+18/01/2018 10:09:13 AM [test_02optionMenu] [INFO] test_02optionMenu Triggered
+18/01/2018 10:09:13 AM [test_02optionMenu] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+18/01/2018 10:09:15 AM [test_02optionMenu] [INFO] __DB connection Started__
+18/01/2018 10:09:15 AM [test_02optionMenu] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:15 AM [test_02optionMenu] [INFO] {"code":0,"message":"Success","txn_ID":"POR286"}
+18/01/2018 10:09:17 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 4.25400018692 sec.
+18/01/2018 10:09:17 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1516250357.67
+18/01/2018 10:09:17 AM [test_03localizationnetw] [INFO] test_03localizationnetw Triggered
+18/01/2018 10:09:17 AM [test_03localizationnetw] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/POR286/23/56/Apple/SW2/4G
+18/01/2018 10:09:18 AM [test_03localizationnetw] [INFO] __DB connection Started__
+18/01/2018 10:09:19 AM [test_03localizationnetw] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:19 AM [test_03localizationnetw] [INFO] {"code":0,"message":"Success","txn_ID":"POR286"}
+18/01/2018 10:09:21 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 3.43300008774 sec.
+18/01/2018 10:09:21 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1516250361.1
+18/01/2018 10:09:21 AM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
+18/01/2018 10:09:21 AM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+18/01/2018 10:09:23 AM [test_04verifyresourceid] [INFO] __DB connection Started__
+18/01/2018 10:09:23 AM [test_04verifyresourceid] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:23 AM [test_04verifyresourceid] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"SIM","validMSISDN":0}
+18/01/2018 10:09:25 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 4.65199995041 sec.
+18/01/2018 10:09:25 AM [test_05id_document] [INFO] Testcase test_05id_document Started at 1516250365.76
+18/01/2018 10:09:25 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:09:25 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:09:25 AM [test_05id_document] [INFO] {'txn_ID': u'POR286', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:09:25 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] {"code":1,"message":"Error of service","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR286","dni_blocked_flag":0,"validLines":0,"validDni":1,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] "message":"Error of service"
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] {'txn_ID': u'POR286', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:09:27 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:09:29 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR286","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:09:29 AM [test_05id_document] [INFO] __DB connection Started__
+18/01/2018 10:09:29 AM [test_05id_document] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:29 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR286","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:09:31 AM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 5.617000103 sec.
+18/01/2018 10:09:31 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1516250371.38
+18/01/2018 10:09:31 AM [test_06populationcenter] [INFO] test_06populationcenter Triggered
+18/01/2018 10:09:31 AM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
+18/01/2018 10:09:33 AM [test_06populationcenter] [INFO] __DB connection Started__
+18/01/2018 10:09:34 AM [test_06populationcenter] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:34 AM [test_06populationcenter] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","valid":0,"coverageFlag":1}
+18/01/2018 10:09:36 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 4.72799992561 sec.
+18/01/2018 10:09:36 AM [test_07dataporta] [INFO] Testcase test_07dataporta Started at 1516250376.11
+18/01/2018 10:09:36 AM [test_07dataporta] [INFO] test_07dataporta Triggered
+18/01/2018 10:09:36 AM [test_07dataporta] [INFO] POST http://localhost:8008/dsp_nbi/dataPorta
+18/01/2018 10:09:39 AM [test_07dataporta] [INFO] __DB connection Started__
+18/01/2018 10:09:39 AM [test_07dataporta] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:39 AM [test_07dataporta] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","valid":0}
+18/01/2018 10:09:41 AM [test_07dataporta] [INFO] Testcase test_07dataporta Execution Time is 5.53999996185 sec.
+18/01/2018 10:09:41 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1516250381.65
+18/01/2018 10:09:41 AM [test_08getplantariff] [INFO] test_08getplantariff Triggered
+18/01/2018 10:09:41 AM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/POR286/Portability
+18/01/2018 10:09:44 AM [test_08getplantariff] [INFO] __DB connection Started__
+18/01/2018 10:09:44 AM [test_08getplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:44 AM [test_08getplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","planTariff":[{"tmCode":"PO_ADDON_BOLSA_100MB_1HR","isDefault":"","planDesc":"Bolsa 100 MB por 1 hora","planName":"Bolsa 100 MB por 1 hora","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_100MB_7DIAS","isDefault":"","planDesc":"Bolsa 100 MB vig 7 días","planName":"Bolsa 100 MB vig 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_123LDI","isDefault":"","planDesc":"Bolsa 123LDI","planName":"Bolsa 123LDI","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1GB_30DIAS","isDefault":"","planDesc":"Bolsa 1 GB vig 30 días","planName":"Bolsa 1 GB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1_5GB_7DIAS","isDefault":"","planDesc":"Bolsa 1,5 GB por 7 días","planName":"Bolsa 1,5 GB por 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_200MB_15DIAS","isDefault":"","planDesc":"Bolsa 200 MB vig 15 días","planName":"Bolsa 200 MB vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_15D","isDefault":"","planDesc":"Bolsa 250 MB por 15 días","planName":"Bolsa 250 MB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_3HR","isDefault":"","planDesc":"Bolsa 250 MB por 3 horas","planName":"Bolsa 250 MB por 3 horas","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250_250MB_15DIAS","isDefault":"","planDesc":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","planName":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_30MB_1DIA","isDefault":"","planDesc":"Bolsa 30 MB vig 1 día","planName":"Bolsa 30 MB vig 1 día","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_350MB_30DIAS","isDefault":"","planDesc":"Bolsa 350 MB vig 30 días","planName":"Bolsa 350 MB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_3GB_15DIAS","isDefault":"","planDesc":"Bolsa 3 GB por 15 días","planName":"Bolsa 3 GB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_500MB_30D","isDefault":"","planDesc":"Bolsa 500 MB por 30 días","planName":"Bolsa 500 MB por 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_50MB_1HR","isDefault":"","planDesc":"Bolsa 50 MB vig 1 hr","planName":"Bolsa 50 MB vig 1 hr","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_80SMS_TD_15DIAS","isDefault":"","planDesc":"Bolsa 80 SMS Todo Destino vig 15 días","planName":"Bolsa 80 SMS Todo Destino vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_900MB_2DIAS","isDefault":"","planDesc":"Bolsa 900 MB por 2 días","planName":"Bolsa 900 MB por 2 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ALOPERU_BOLIVIA","isDefault":"","planDesc":"Bolsa Aló Perú y Bolivia","planName":"Bolsa Aló Perú y Bolivia","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_FB_200MB_7","isDefault":"","planDesc":"Bolsa 200MB Facebook vig 7 dias","planName":"Bolsa 200MB Facebook vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA","isDefault":"","planDesc":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","planName":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_100MB","isDefault":"","planDesc":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_1GB","isDefault":"","planDesc":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","planName":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_400MB","isDefault":"","planDesc":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_500_AV","isDefault":"","planDesc":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","planName":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_15SMS","isDefault":"","planDesc":"Bolsa Roaming 15 SMS","planName":"Bolsa Roaming 15 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_25SMS","isDefault":"","planDesc":"Bolsa Roaming 25 SMS","planName":"Bolsa Roaming 25 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_35SMS","isDefault":"","planDesc":"Bolsa Roaming 35 SMS","planName":"Bolsa Roaming 35 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_PV_WHATSAPP","isDefault":"","planDesc":"Bolsa Roaming PV Whatsapp","planName":"Bolsa Roaming PV Whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_1GB_30D","isDefault":"","planDesc":"Bolsa de RRSS 1GB vig 30 dias","planName":"Bolsa de RRSS 1GB vig 30 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_250MB_7D","isDefault":"","planDesc":"Bolsa de RRSS 250MB vig 7 dias","planName":"Bolsa de RRSS 250MB vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_500MB_15D","isDefault":"","planDesc":"Bolsa de RRSS 500MB vig 15 dias","planName":"Bolsa de RRSS 500MB vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VIAJ_ROAM","isDefault":"","planDesc":"Bolsa viajera Roam 5 Min + 10 SMS","planName":"Bolsa viajera Roam 5 Min + 10 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VOICE_ILIM_FDS","isDefault":"","planDesc":"Bolsa Voice Ilimitada Fim de Semana","planName":"Bolsa Voice Ilimitada Fim de Semana","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_WAPP_100MB_3D","isDefault":"","planDesc":"Bolsa 100MB Whatsapp vig 3 dias","planName":"Bolsa 100MB Whatsapp vig 3 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_YTUBE_500MB_15D","isDefault":"","planDesc":"Bolsa 500MB Youtube + RRSS vig 15 dias","planName":"Bolsa 500MB Youtube + RRSS vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_FAF_ADDON_FAV_TD_DEST_50","isDefault":"","planDesc":"Numeros Favorito Todo Destino","planName":"Numeros Favorito Todo Destino","price":0.0,"numDays":0}]}
+18/01/2018 10:09:46 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 5.1360001564 sec.
+18/01/2018 10:09:46 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Started at 1516250386.78
+18/01/2018 10:09:46 AM [test_09selectplantariff] [INFO] test_09selectplantariff Triggered
+18/01/2018 10:09:46 AM [test_09selectplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/POR286/PO_ADDON_BOLSA_100MB_1HR
+18/01/2018 10:09:49 AM [test_09selectplantariff] [INFO] __DB connection Started__
+18/01/2018 10:09:49 AM [test_09selectplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:49 AM [test_09selectplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR286"}
+18/01/2018 10:09:51 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Execution Time is 4.61199998856 sec.
+18/01/2018 10:09:51 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Started at 1516250391.39
+18/01/2018 10:09:51 AM [test_10requestcontract] [INFO] test_10requestcontract Triggered
+18/01/2018 10:09:51 AM [test_10requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/POR286/Portability
+18/01/2018 10:09:53 AM [test_10requestcontract] [INFO] __DB connection Started__
+18/01/2018 10:09:53 AM [test_10requestcontract] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:53 AM [test_10requestcontract] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","textContract":"Portability contract\nHello ELIAS ELISEO CARCAMO Selecccionaste the tariff plan 'Bolsa 100 MB por 1 hora' with the following rates and conditions:\nBolsa 100 MB por 1 hora. Rate of the plan is  and is valid for \nThe contract will be dissolved if you do not perform refills, no show, no free outgoing traffic within 2 months ago. More information on www.entel.peru","bono_description":"","email":""}
+18/01/2018 10:09:55 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Execution Time is 3.98900008202 sec.
+18/01/2018 10:09:55 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Started at 1516250395.38
+18/01/2018 10:09:55 AM [test_11contractacceptance] [INFO] test_11contractacceptance Triggered
+18/01/2018 10:09:55 AM [test_11contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/POR286//1/1
+18/01/2018 10:09:56 AM [test_11contractacceptance] [INFO] __DB connection Started__
+18/01/2018 10:09:57 AM [test_11contractacceptance] [INFO] __DB connection closed Successfully__
+18/01/2018 10:09:57 AM [test_11contractacceptance] [INFO] {"code":0,"message":"Success","txn_ID":"POR286"}
+18/01/2018 10:09:59 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Execution Time is 3.70600008965 sec.
+18/01/2018 10:09:59 AM [test_12biometricws] [INFO] Testcase test_12biometricws Started at 1516250399.09
+18/01/2018 10:09:59 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:09:59 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:10:01 AM [test_12biometricws] [INFO] "message":"Some internal response validation error for validar_huellas_wsq service"
+18/01/2018 10:10:01 AM [test_12biometricws] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:10:01 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:10:01 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:10:19 AM [test_12biometricws] [INFO] __DB connection Started__
+18/01/2018 10:10:19 AM [test_12biometricws] [INFO] __DB connection closed Successfully__
+18/01/2018 10:10:19 AM [test_12biometricws] [INFO] {"code":0,"message":"success","txn_ID":"POR286","resultBio":"0","dni_blocked_flag":0}
+18/01/2018 10:10:21 AM [test_12biometricws] [INFO] Testcase test_12biometricws Execution Time is 22.5559999943 sec.
+18/01/2018 10:10:21 AM [test_13requestorder] [INFO] Testcase test_13requestorder Started at 1516250421.65
+18/01/2018 10:10:21 AM [test_13requestorder] [INFO] test_13requestorder Triggered
+18/01/2018 10:10:21 AM [test_13requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/POR286
+18/01/2018 10:10:25 AM [test_13requestorder] [INFO] __DB connection Started__
+18/01/2018 10:10:25 AM [test_13requestorder] [INFO] __DB connection closed Successfully__
+18/01/2018 10:10:25 AM [test_13requestorder] [INFO] {"code":0,"message":"Success","txn_ID":"POR286","order_ID":809334747,"MSISDN":"776543507","shoppingCartID":"11344"}
+18/01/2018 10:10:27 AM [test_13requestorder] [INFO] Testcase test_13requestorder Execution Time is 5.50999999046 sec.
+18/01/2018 10:10:27 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Started at 1516250427.16
+18/01/2018 10:10:27 AM [test_14portaqueryresult] [INFO] test_14portaqueryresult Triggered
+18/01/2018 10:10:27 AM [test_14portaqueryresult] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:10:29 AM [test_14portaqueryresult] [INFO] __DB connection Started__
+18/01/2018 10:10:29 AM [test_14portaqueryresult] [INFO] __DB connection closed Successfully__
+18/01/2018 10:10:31 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Execution Time is 4.04299998283 sec.
+18/01/2018 10:21:37 AM [test_01loginUser] [INFO] Testcase test_01loginUser Started at 1516251097.2
+18/01/2018 10:21:39 AM [test_01loginUser] [INFO] Testcase test_01loginUser Execution Time is 2.00099992752 sec.
+18/01/2018 10:21:39 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Started at 1516251099.2
+18/01/2018 10:21:39 AM [test_02optionMenu] [INFO] test_02optionMenu Triggered
+18/01/2018 10:21:39 AM [test_02optionMenu] [INFO] POST http://localhost:8008/dsp_nbi/optionMenu
+18/01/2018 10:21:40 AM [test_02optionMenu] [INFO] __DB connection Started__
+18/01/2018 10:21:41 AM [test_02optionMenu] [INFO] __DB connection closed Successfully__
+18/01/2018 10:21:41 AM [test_02optionMenu] [INFO] {"code":0,"message":"Success","txn_ID":"POR287"}
+18/01/2018 10:21:43 AM [test_02optionMenu] [INFO] Testcase test_02optionMenu Execution Time is 4.16000008583 sec.
+18/01/2018 10:21:43 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Started at 1516251103.36
+18/01/2018 10:21:43 AM [test_03localizationnetw] [INFO] test_03localizationnetw Triggered
+18/01/2018 10:21:43 AM [test_03localizationnetw] [INFO] GET http://localhost:8008/dsp_nbi/localizationNetw/POR287/23/56/Apple/SW2/4G
+18/01/2018 10:21:44 AM [test_03localizationnetw] [INFO] __DB connection Started__
+18/01/2018 10:21:44 AM [test_03localizationnetw] [INFO] __DB connection closed Successfully__
+18/01/2018 10:21:44 AM [test_03localizationnetw] [INFO] {"code":0,"message":"Success","txn_ID":"POR287"}
+18/01/2018 10:21:46 AM [test_03localizationnetw] [INFO] Testcase test_03localizationnetw Execution Time is 3.5490000248 sec.
+18/01/2018 10:21:46 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Started at 1516251106.91
+18/01/2018 10:21:46 AM [test_04verifyresourceid] [INFO] test_04verifyresourceid Triggered
+18/01/2018 10:21:46 AM [test_04verifyresourceid] [INFO] POST http://localhost:8008/dsp_nbi/verifyResourceID
+18/01/2018 10:21:50 AM [test_04verifyresourceid] [INFO] __DB connection Started__
+18/01/2018 10:21:50 AM [test_04verifyresourceid] [INFO] __DB connection closed Successfully__
+18/01/2018 10:21:50 AM [test_04verifyresourceid] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","valid":1,"IMEI":"","MSISDN":"6789654345","PACKflag":"SIM","validMSISDN":0}
+18/01/2018 10:21:52 AM [test_04verifyresourceid] [INFO] Testcase test_04verifyresourceid Execution Time is 5.75199985504 sec.
+18/01/2018 10:21:52 AM [test_05id_document] [INFO] Testcase test_05id_document Started at 1516251112.66
+18/01/2018 10:21:52 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:21:52 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:21:52 AM [test_05id_document] [INFO] {'txn_ID': u'POR287', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:21:52 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] {"code":1,"message":"Error of service","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR287","dni_blocked_flag":0,"validLines":0,"validDni":1,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] "message":"Error of service"
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] test_05id_document Triggered
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] id_Document
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] {'txn_ID': u'POR287', 'name': '', 'fatherLastName': '', 'motherLastName': '', 'valueID': 'DNIABC87', 'type': 'DNI'}
+18/01/2018 10:21:55 AM [test_05id_document] [INFO] POST http://localhost:8008/dsp_nbi/id_Document
+18/01/2018 10:21:57 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR287","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:21:57 AM [test_05id_document] [INFO] __DB connection Started__
+18/01/2018 10:21:57 AM [test_05id_document] [INFO] __DB connection closed Successfully__
+18/01/2018 10:21:57 AM [test_05id_document] [INFO] {"code":0,"message":"Success","apePaterno":"ARO","apeMaterno":"","txn_ID":"POR287","dni_blocked_flag":0,"validLines":0,"validDni":0,"name":"ELIAS ELISEO CARCAMO"}
+18/01/2018 10:21:59 AM [test_05id_document] [INFO] Testcase test_05id_document Execution Time is 7.15700006485 sec.
+18/01/2018 10:21:59 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Started at 1516251119.82
+18/01/2018 10:21:59 AM [test_06populationcenter] [INFO] test_06populationcenter Triggered
+18/01/2018 10:21:59 AM [test_06populationcenter] [INFO] POST http://localhost:8008/dsp_nbi/populationCenter
+18/01/2018 10:22:02 AM [test_06populationcenter] [INFO] __DB connection Started__
+18/01/2018 10:22:02 AM [test_06populationcenter] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:02 AM [test_06populationcenter] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","valid":0,"coverageFlag":1}
+18/01/2018 10:22:04 AM [test_06populationcenter] [INFO] Testcase test_06populationcenter Execution Time is 4.94199991226 sec.
+18/01/2018 10:22:04 AM [test_07dataporta] [INFO] Testcase test_07dataporta Started at 1516251124.77
+18/01/2018 10:22:04 AM [test_07dataporta] [INFO] test_07dataporta Triggered
+18/01/2018 10:22:04 AM [test_07dataporta] [INFO] POST http://localhost:8008/dsp_nbi/dataPorta
+18/01/2018 10:22:07 AM [test_07dataporta] [INFO] __DB connection Started__
+18/01/2018 10:22:08 AM [test_07dataporta] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:08 AM [test_07dataporta] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","valid":0}
+18/01/2018 10:22:10 AM [test_07dataporta] [INFO] Testcase test_07dataporta Execution Time is 5.30999994278 sec.
+18/01/2018 10:22:10 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Started at 1516251130.08
+18/01/2018 10:22:10 AM [test_08getplantariff] [INFO] test_08getplantariff Triggered
+18/01/2018 10:22:10 AM [test_08getplantariff] [INFO] GET http://localhost:8008/dsp_nbi/getPlanTariff/POR287/Portability
+18/01/2018 10:22:13 AM [test_08getplantariff] [INFO] __DB connection Started__
+18/01/2018 10:22:13 AM [test_08getplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:13 AM [test_08getplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","planTariff":[{"tmCode":"PO_ADDON_BOLSA_100MB_1HR","isDefault":"","planDesc":"Bolsa 100 MB por 1 hora","planName":"Bolsa 100 MB por 1 hora","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_100MB_7DIAS","isDefault":"","planDesc":"Bolsa 100 MB vig 7 días","planName":"Bolsa 100 MB vig 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_123LDI","isDefault":"","planDesc":"Bolsa 123LDI","planName":"Bolsa 123LDI","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1GB_30DIAS","isDefault":"","planDesc":"Bolsa 1 GB vig 30 días","planName":"Bolsa 1 GB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_1_5GB_7DIAS","isDefault":"","planDesc":"Bolsa 1,5 GB por 7 días","planName":"Bolsa 1,5 GB por 7 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_200MB_15DIAS","isDefault":"","planDesc":"Bolsa 200 MB vig 15 días","planName":"Bolsa 200 MB vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_15D","isDefault":"","planDesc":"Bolsa 250 MB por 15 días","planName":"Bolsa 250 MB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250MB_3HR","isDefault":"","planDesc":"Bolsa 250 MB por 3 horas","planName":"Bolsa 250 MB por 3 horas","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_250_250MB_15DIAS","isDefault":"","planDesc":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","planName":"Bolsa 250 + 250 MB vig 15 días - Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_30MB_1DIA","isDefault":"","planDesc":"Bolsa 30 MB vig 1 día","planName":"Bolsa 30 MB vig 1 día","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_350MB_30DIAS","isDefault":"","planDesc":"Bolsa 350 MB vig 30 días","planName":"Bolsa 350 MB vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_3GB_15DIAS","isDefault":"","planDesc":"Bolsa 3 GB por 15 días","planName":"Bolsa 3 GB por 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_500MB_30D","isDefault":"","planDesc":"Bolsa 500 MB por 30 días","planName":"Bolsa 500 MB por 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_50MB_1HR","isDefault":"","planDesc":"Bolsa 50 MB vig 1 hr","planName":"Bolsa 50 MB vig 1 hr","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_80SMS_TD_15DIAS","isDefault":"","planDesc":"Bolsa 80 SMS Todo Destino vig 15 días","planName":"Bolsa 80 SMS Todo Destino vig 15 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_900MB_2DIAS","isDefault":"","planDesc":"Bolsa 900 MB por 2 días","planName":"Bolsa 900 MB por 2 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ALOPERU_BOLIVIA","isDefault":"","planDesc":"Bolsa Aló Perú y Bolivia","planName":"Bolsa Aló Perú y Bolivia","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_FB_200MB_7","isDefault":"","planDesc":"Bolsa 200MB Facebook vig 7 dias","planName":"Bolsa 200MB Facebook vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA","isDefault":"","planDesc":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","planName":"Bolsa Mixta 200 MB + 50 min + 250 SMS TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_100MB","isDefault":"","planDesc":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 100 MB + 40 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_1GB","isDefault":"","planDesc":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","planName":"Bolsa Mixta 1GB, 100 Min TD, 500 MB whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_400MB","isDefault":"","planDesc":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","planName":"Bolsa Mixta 400 MB + 100 min + 100 SMS TD vig 30 días","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_MIXTA_500_AV","isDefault":"","planDesc":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","planName":"Bolsa Mixta 500 MB + 100 MB Whatsapp + 50 min TD vig 15 días Alto Valor","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_15SMS","isDefault":"","planDesc":"Bolsa Roaming 15 SMS","planName":"Bolsa Roaming 15 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_25SMS","isDefault":"","planDesc":"Bolsa Roaming 25 SMS","planName":"Bolsa Roaming 25 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_35SMS","isDefault":"","planDesc":"Bolsa Roaming 35 SMS","planName":"Bolsa Roaming 35 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_ROAM_PV_WHATSAPP","isDefault":"","planDesc":"Bolsa Roaming PV Whatsapp","planName":"Bolsa Roaming PV Whatsapp","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_1GB_30D","isDefault":"","planDesc":"Bolsa de RRSS 1GB vig 30 dias","planName":"Bolsa de RRSS 1GB vig 30 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_250MB_7D","isDefault":"","planDesc":"Bolsa de RRSS 250MB vig 7 dias","planName":"Bolsa de RRSS 250MB vig 7 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_RRSS_500MB_15D","isDefault":"","planDesc":"Bolsa de RRSS 500MB vig 15 dias","planName":"Bolsa de RRSS 500MB vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VIAJ_ROAM","isDefault":"","planDesc":"Bolsa viajera Roam 5 Min + 10 SMS","planName":"Bolsa viajera Roam 5 Min + 10 SMS","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_VOICE_ILIM_FDS","isDefault":"","planDesc":"Bolsa Voice Ilimitada Fim de Semana","planName":"Bolsa Voice Ilimitada Fim de Semana","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_WAPP_100MB_3D","isDefault":"","planDesc":"Bolsa 100MB Whatsapp vig 3 dias","planName":"Bolsa 100MB Whatsapp vig 3 dias","price":0.0,"numDays":0},{"tmCode":"PO_ADDON_BOLSA_YTUBE_500MB_15D","isDefault":"","planDesc":"Bolsa 500MB Youtube + RRSS vig 15 dias","planName":"Bolsa 500MB Youtube + RRSS vig 15 dias","price":0.0,"numDays":0},{"tmCode":"PO_FAF_ADDON_FAV_TD_DEST_50","isDefault":"","planDesc":"Numeros Favorito Todo Destino","planName":"Numeros Favorito Todo Destino","price":0.0,"numDays":0}]}
+18/01/2018 10:22:15 AM [test_08getplantariff] [INFO] Testcase test_08getplantariff Execution Time is 5.16700005531 sec.
+18/01/2018 10:22:15 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Started at 1516251135.24
+18/01/2018 10:22:15 AM [test_09selectplantariff] [INFO] test_09selectplantariff Triggered
+18/01/2018 10:22:15 AM [test_09selectplantariff] [INFO] GET http://localhost:8008/dsp_nbi/selectPlanTariff/POR287/PO_ADDON_BOLSA_100MB_1HR
+18/01/2018 10:22:17 AM [test_09selectplantariff] [INFO] __DB connection Started__
+18/01/2018 10:22:17 AM [test_09selectplantariff] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:17 AM [test_09selectplantariff] [INFO] {"code":0,"message":"Success","txn_ID":"POR287"}
+18/01/2018 10:22:19 AM [test_09selectplantariff] [INFO] Testcase test_09selectplantariff Execution Time is 4.20599985123 sec.
+18/01/2018 10:22:19 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Started at 1516251139.45
+18/01/2018 10:22:19 AM [test_10requestcontract] [INFO] test_10requestcontract Triggered
+18/01/2018 10:22:19 AM [test_10requestcontract] [INFO] GET http://localhost:8008/dsp_nbi/requestContract/POR287/Portability
+18/01/2018 10:22:21 AM [test_10requestcontract] [INFO] __DB connection Started__
+18/01/2018 10:22:21 AM [test_10requestcontract] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:21 AM [test_10requestcontract] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","textContract":"Portability contract\nHello ELIAS ELISEO CARCAMO Selecccionaste the tariff plan 'Bolsa 100 MB por 1 hora' with the following rates and conditions:\nBolsa 100 MB por 1 hora. Rate of the plan is  and is valid for \nThe contract will be dissolved if you do not perform refills, no show, no free outgoing traffic within 2 months ago. More information on www.entel.peru","bono_description":"","email":""}
+18/01/2018 10:22:23 AM [test_10requestcontract] [INFO] Testcase test_10requestcontract Execution Time is 3.7539999485 sec.
+18/01/2018 10:22:23 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Started at 1516251143.2
+18/01/2018 10:22:23 AM [test_11contractacceptance] [INFO] test_11contractacceptance Triggered
+18/01/2018 10:22:23 AM [test_11contractacceptance] [INFO] GET http://localhost:8008/dsp_nbi/contractAcceptance/POR287//1/1
+18/01/2018 10:22:24 AM [test_11contractacceptance] [INFO] __DB connection Started__
+18/01/2018 10:22:24 AM [test_11contractacceptance] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:24 AM [test_11contractacceptance] [INFO] {"code":0,"message":"Success","txn_ID":"POR287"}
+18/01/2018 10:22:26 AM [test_11contractacceptance] [INFO] Testcase test_11contractacceptance Execution Time is 3.56900000572 sec.
+18/01/2018 10:22:26 AM [test_12biometricws] [INFO] Testcase test_12biometricws Started at 1516251146.78
+18/01/2018 10:22:26 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:22:26 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:22:28 AM [test_12biometricws] [INFO] "message":"Some internal response validation error for validar_huellas_wsq service"
+18/01/2018 10:22:28 AM [test_12biometricws] [INFO] Re-triggering since reponse code is not as expected
+18/01/2018 10:22:28 AM [test_12biometricws] [INFO] test_12biometricws Triggered
+18/01/2018 10:22:28 AM [test_12biometricws] [INFO] POST http://localhost:8008/dsp_nbi/biometricWS
+18/01/2018 10:22:45 AM [test_12biometricws] [INFO] __DB connection Started__
+18/01/2018 10:22:46 AM [test_12biometricws] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:46 AM [test_12biometricws] [INFO] {"code":0,"message":"success","txn_ID":"POR287","resultBio":"0","dni_blocked_flag":0}
+18/01/2018 10:22:48 AM [test_12biometricws] [INFO] Testcase test_12biometricws Execution Time is 21.3449997902 sec.
+18/01/2018 10:22:48 AM [test_13requestorder] [INFO] Testcase test_13requestorder Started at 1516251168.12
+18/01/2018 10:22:48 AM [test_13requestorder] [INFO] test_13requestorder Triggered
+18/01/2018 10:22:48 AM [test_13requestorder] [INFO] GET http://localhost:8008/dsp_nbi/requestOrder/POR287
+18/01/2018 10:22:50 AM [test_13requestorder] [INFO] __DB connection Started__
+18/01/2018 10:22:50 AM [test_13requestorder] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:50 AM [test_13requestorder] [INFO] {"code":0,"message":"Success","txn_ID":"POR287","order_ID":809334747,"MSISDN":"776543508","shoppingCartID":"11344"}
+18/01/2018 10:22:52 AM [test_13requestorder] [INFO] Testcase test_13requestorder Execution Time is 4.45300006866 sec.
+18/01/2018 10:22:52 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Started at 1516251172.59
+18/01/2018 10:22:52 AM [test_14portaqueryresult] [INFO] test_14portaqueryresult Triggered
+18/01/2018 10:22:52 AM [test_14portaqueryresult] [INFO] POST http://localhost:8008/dsp_nbi/portaQueryResult
+18/01/2018 10:22:54 AM [test_14portaqueryresult] [INFO] __DB connection Started__
+18/01/2018 10:22:54 AM [test_14portaqueryresult] [INFO] __DB connection closed Successfully__
+18/01/2018 10:22:56 AM [test_14portaqueryresult] [INFO] Testcase test_14portaqueryresult Execution Time is 3.72300004959 sec.
