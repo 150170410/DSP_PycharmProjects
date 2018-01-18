@@ -16,14 +16,18 @@ class ValidateTDEPortability(TestPosts):
 
         global txn_id
         global opType
-        global ICCID_subscriber
+        global ICCID_subscriber # PLease provide unique ICCID each time start the Suite
+        global portedMsisdn     # PLease provide unique portedMsisdn each time start the Suite
+        global portStatus       # PLease provide unique portedMsisdn each time start the Suite
         global tarPlan
         global legacy_localzn
         global tde_localzn
 
-        txn_id = 'ACT188'
+        ICCID_subscriber = '89560100000792429996'
+        portedMsisdn='776543507'
+        portStatus='CPRABD'
+
         opType = 'Portability'
-        ICCID_subscriber = '89560100000792429986'
         tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'
         legacy_localzn = '/YHT/BGF/3G'
         tde_localzn = '/23/56/Apple/SW2/4G'
@@ -66,7 +70,7 @@ class ValidateTDEPortability(TestPosts):
     def test_07dataporta(self):
         """ test_07dataporta: Test case for test view post using GET /posts/{id}.                                 """
 
-        response = self.dataporta(txn_id)
+        response = self.dataporta(txn_id,portedMsisdn)
         self.lg(response.text)
 
     def test_08getplantariff(self):
@@ -112,3 +116,9 @@ class ValidateTDEPortability(TestPosts):
 
         response = self.requestorder(txn_id)
         self.lg(response.text)
+
+    def test_14portaqueryresult(self):
+        """ test_14portaqueryresult: Test case for test view post using GET /posts/{id}.                                 """
+
+        response = self.portaqueryresult(portedMsisdn,portStatus,txn_id)
+        # self.lg(response.text)
