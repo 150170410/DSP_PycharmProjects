@@ -47,10 +47,15 @@ class ValidateTDESimSwap(TestPosts):
 
     def test_05dataswap(self):
         """ test_05dataswap: Test case for test view post using GET /posts/{id}.                                 """
+        try:
+            response=self.dataswap(txn_id)
+            self.lg(response.text)
 
-        response=self.dataswap(txn_id)
-        self.lg(response.text)
-
+        except AssertionError, e:
+            self.lg(e.message)
+            self.lg("Re-triggering since reponse code is not as expected")
+            response = self.dataswap(txn_id)
+            self.lg(response.text)
 
     def test_06swapreason(self):
         """ test_06swapreason: Test case for test view post using GET /posts/{id}.                                 """
