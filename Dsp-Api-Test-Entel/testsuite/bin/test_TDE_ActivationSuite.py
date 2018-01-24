@@ -4,43 +4,36 @@ class ValidateTDEVenta(TestPosts):
     def __init__(self,*args, **kwargs):
         super(ValidateTDEVenta, self).__init__(*args, **kwargs)
 
+        self.opType = 'venta'
+        self.ICCID_subscriber = config['main']['iccid_subscriber']
+        self.tarPlan = config['main']['tarplan']
+        self.legacy_localzn = config['main']['legacy_localzn']
+        self.tde_localzn = config['main']['tde_localzn']
+
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
-
         # response=self.loginuser()
         # self.lg(response.text)
 
+
     def test_02optionMenu(self):
         """ test_02optionMenu: Test case for test view post using GET /posts/{id}.                          """
-
         global txn_id
-        global opType
-        global ICCID_subscriber
-        global tarPlan
-        global legacy_localzn
-        global tde_localzn
-
-        ICCID_subscriber = config['main']['iccid_subscriber']
-        opType = 'venta'
-        tarPlan = 'PO_ADDON_BOLSA_100MB_1HR'
-        legacy_localzn = '/YHT/BGF/3G'
-        tde_localzn = '/23/56/Apple/SW2/4G'
-
-        response = self.optionmenu(opType)
+        response = self.optionmenu(self.opType)
         txn_id = response.text.split(',')[2].split(':')[1].split('"')[1]
         self.lg(response.text)
 
     def test_03localizationnetw(self):
         """ test_03localizationnetw: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.localizationnetw(txn_id,tde_localzn)
+        response=self.localizationnetw(txn_id,self.tde_localzn)
         self.lg(response.text)
 
     def test_04verifyresourceid(self):
         """ test_04verifyresourceid: Test case for test view post using GET /posts/{id}.                                 """
 
-        response = self.verifyresourceid(txn_id, ICCID_subscriber)
+        response = self.verifyresourceid(txn_id, self.ICCID_subscriber)
         self.lg(response.text)
 
     def test_05id_document(self):
@@ -64,13 +57,13 @@ class ValidateTDEVenta(TestPosts):
     def test_07getplantariff(self):
         """ test_07getplantariff: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.getplantariff(txn_id,opType)
+        response=self.getplantariff(txn_id,self.opType)
         self.lg(response.text)
 
     def test_08selectplantariff(self):
         """ test_08selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.selectplantariff(txn_id,tarPlan)
+        response=self.selectplantariff(txn_id,self.tarPlan)
         self.lg(response.text)
 
     def test_09getavailablemsisdn(self):
@@ -88,7 +81,7 @@ class ValidateTDEVenta(TestPosts):
     def test_11requestcontract(self):
         """ test_11requestcontract: Test case for test view post using GET /posts/{id}.                                 """
 
-        response = self.requestcontract(txn_id,opType)
+        response = self.requestcontract(txn_id,self.opType)
         self.lg(response.text)
 
     def test_12contractacceptance(self):

@@ -1,0 +1,6 @@
+nosetests -v -s -x testsuite/bin/test_Legacy_ActivationSuite.py --tc-file=config.ini
+nosetests -v -s -x testsuite/bin/test_Legacy_SimSwapSuite.py --tc-file=config.ini
+
+nosetests -v -s -x testsuite/bin/test_TDE_ActivationSuite.py --tc-file=config.ini
+nosetests -v -s -x testsuite/bin/test_TDE_PortabilitySuite.py --tc-file=config.ini
+nosetests -v -s -x testsuite/bin/test_TDE_SimSwapSuite.py --tc-file=config.ini

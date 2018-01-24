@@ -351,19 +351,11 @@ class TestPosts(BaseTest):
         #txn_id = 'ACT178'
 
         checkQuerry="SELECT OPERATION_ID FROM DSP_TRANSACTION_DTLS where TXN_ID = '%s'" % txn_id
-        self.lg("__DB connection Started__")
-        con = cx_Oracle.connect('DSP_MAIN/DSP_MAIN@localhost:7779/orcl')
-        cur = con.cursor()
+
+        cur = self.con.cursor()
         cur.execute(checkQuerry)
         oprID= cur.fetchall()[0][0]
 
-        # for row in cur:    # This method is to iterate thorough the list of tuples
-        #     print (row)
-        #print cur.fetchall()    #fetchall()-> Fetches All rows as Array of tupples, then you can handle as an array
-        # print cur.fetchone()[0]       #fetchone()->Fetches one rows as Array of tupples
-
         cur.close()
-        con.close()
-        self.lg("__DB connection closed Successfully__")
         return oprID
 

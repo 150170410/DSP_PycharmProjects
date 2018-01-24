@@ -1,6 +1,3 @@
-
-#http://localhost:8008/dsp_nbi/getMessages/Test411/903323611631/9033378633300131/McRj2
-
 import logging
 import time
 import os
@@ -10,6 +7,12 @@ from unittest import TestCase
 from testconfig import config
 import cx_Oracle
 
+def setup_module():
+    print(__name__, ': setup_module() ~~~~~~~~~~~~~~~~~~~~~~')
+
+
+def teardown_module():
+    print(__name__, ': teardown_module() ~~~~~~~~~~~~~~~~~~~')
 
 
 class BaseTest(TestCase):
@@ -30,21 +33,33 @@ class BaseTest(TestCase):
 
 
 
+    @classmethod
+    def setUpClass(cls):
+        cls.session = requests.Session()
+        cls.con = cx_Oracle.connect('DSP_MAIN/DSP_MAIN@localhost:8009/orcl')
+        print("*******---DB Connection Started----********")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.session.close()
+        cls.con.close()
+        print("*******---DB Connection Closed----********")
+
+
     def setUp(self):
         self._testID = self._testMethodName
         self._startTime = time.time()
         self._logger = logging.LoggerAdapter(logging.getLogger('api_testsuite'),
                                              {'testid': self.shortDescription().split(':')[0] or self._testID})
         self.lg('Testcase %s Started at %s' % (self._testID, self._startTime))
-        self.session = requests.Session()
+        # self.session = requests.Session()
 
 
     def tearDown(self):
         """
         Environment cleanup and logs collection.
         """
-        time.sleep(2)
-        self.session.close()
+        # self.session.close()
         if hasattr(self, '_startTime'):
             executionTime = time.time() - self._startTime
         self.lg('Testcase %s Execution Time is %s sec.' % (self._testID, executionTime))
