@@ -268,10 +268,11 @@ class TestPosts(BaseTest):
         self.assertEqual(self.checkOprID(txn_id), 26)
         return response
 
-    def portabilityquery(self,txn_id):
+    def portabilityquery(self,txn_id,portedMsisdn):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
         self.post_portabilityquery.update({'txn_ID': txn_id})
+        self.post_portabilityquery.update({'telNumber': portedMsisdn})
 
         self.lg('%s Triggered' % self._testID)
         response= self.post_request_response(uri=self.uri_portabilityquery, data=self.post_portabilityquery)
@@ -281,13 +282,17 @@ class TestPosts(BaseTest):
         self.assertEqual(self.checkOprID(txn_id), 30)
         return response
 
-    def sendportabilityresult(self,txn_id):
+    def sendportabilityresult(self,txn_id,portedMsisdn,portStatus):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
-        self.post_sendportabilityresult.update({'txn_ID': txn_id})
+        self.post_sendportabilityresult.update({'portedMsisdn': portedMsisdn})
+        self.post_sendportabilityresult.update({'msisdn': portedMsisdn})
+        self.post_portaqueryresult['portabilityUpdate'].update({'PortabilityIdMessage': portStatus})
 
         self.lg('%s Triggered' % self._testID)
         response= self.post_request_response(uri=self.uri_sendportabilityresult, data=self.post_sendportabilityresult)
+        self.lg(self.post_sendportabilityresult)
+
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
@@ -312,10 +317,10 @@ class TestPosts(BaseTest):
     def validatemaximumLines(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
 
-        self.post_validatemaximumLines.update({'txn_ID': txn_id})
+        self.post_validatemaximumlines.update({'txn_ID': txn_id})
 
         self.lg('%s Triggered' % self._testID)
-        response= self.post_request_response(uri=self.uri_validatemaximumLines, data=self.post_validatemaximumLines)
+        response= self.post_request_response(uri=self.uri_validatemaximumlines, data=self.post_validatemaximumlines)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
