@@ -1,11 +1,8 @@
-import os
-import paramiko
+from testsuite.bin.entel_CI_Base import *
 import ConfigParser
-from stat import S_ISDIR
-#from testsuite.bin.entel_PageObject import *
+from subprocess import call
+import time
 
-
-#---Reading data from .proporties file
 config = ConfigParser.RawConfigParser()
 filepath = '..\deployData.txt'
 config.read(filepath)
@@ -24,98 +21,97 @@ remoteSol_dir = config.get('StaticData', 'remoteSol_dir')
 
 imp_sol_path = config.get('StaticData', 'imp_sol_path')
 
-class pullSolution():
+HPSAcheck = '/etc/init.d/activator check'
+HPSAstart = '/etc/init.d/activator start'
+HPSAstop = '/etc/init.d/activator stop'
+importSol = "/opt/OV/ServiceActivator/bin/deploymentmanager  ImportSolution -file /releases/Release_4.6/29012018/TDE/DSP_TDE.zip"
+deleteSol = "/opt/OV/ServiceActivator/bin/deploymentmanager DeleteSolution -solutionName DSP_TDE"
+deploySol = "/opt/OV/ServiceActivator/bin/deploymentmanager DeploySolution -solutionName DSP_TDE -deploymentFile  /opt/OV/ServiceActivator/solutions/DSP_TDE/deploy.xml -dbUser hpsa -dbPassword password"
+undeploySol = "/opt/OV/ServiceActivator/bin/deploymentmanager  UndeploySolution -solutionName DSP_TDE -dbUser hpsa -dbPassword password -dbHost 15.213.50.68 -db ENTELDSP -dbPort 1521"
+startMock = "/home/dspadmin/scripts/checkSaopProcess.sh"
+hpsabinPath = '/opt/OV/ServiceActivator/bin/'
+soldir='/opt/OV/ServiceActivator/solutions/'
 
-    def __init__(self):
-        #-----FTP Connection Started------------
-        self.ssh=None
-        self.sftp=None
-        # self.ssh=paramiko.SSHClient()
-        # self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        # #ssh.connect('15.213.54.219',username="root",password="hwroot")
-        # self.ssh.connect(ftp_ip, username=ftp_uname, password=ftp_pwd)
-        # self.sftp = self.ssh.open_sftp()
-        # print('SFTP connection started for Solution Download************')
 
-    def startSSH(self,ip,uname,pwd):
-        self.ssh = paramiko.SSHClient()
-        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        #ssh.connect('15.213.54.219',username="root",password="hwroot")
-        self.ssh.connect(ip, username=uname, password=pwd)
-        self.sftp = self.ssh.open_sftp()
-        print('SFTP connection started for Solution Download************')
+class CIPageObject(BaseDeployment):
 
-    def closeSSH(self):
-        self.sftp.close()
-        print('sftp connection closed#############3')
-        self.ssh.close()
-        print('ssh connection closed#############3')
+    def downloadSolution(self):
+       self.startSSH(ftp_ip,ftp_uname, ftp_pwd)
+       self.sftpGet_data(remoteFtp_dir,local_dir)
+       self.closeSSH()
 
-    def sftpGet_data(self,remote_dir,local_dir):
-        os.path.exists(local_dir) or os.makedirs(local_dir)
+    def uploadSolution(self):
+        self.startSSH(remote_ip,remote_uname,remote_pwd)
+        self.sftpPut_data(local_dir,remoteSol_dir)
+        self.closeSSH()
 
-        for item in self.sftp.listdir_attr(remote_dir):
-            remote_path = remote_dir + '/' + item.filename
-            local_path = os.path.join(local_dir, item.filename)
-            print item
-            if S_ISDIR(item.st_mode):
-                self.sftpGet_data(remote_path, local_path)
-            else:
-                self.sftp.get(remote_path, local_path)
+    def checkHPSA(self):
+        print(self.sendCommand(HPSAcheck))
+        return self.sendCommand(HPSAcheck)
 
-        print'******Solution Downloading to Local Server Completed Successfully***********'
+    def startHPSA(self):
+        status = self.checkHPSA()
+        if (status.split(' ')[6] == 'not'):
+            print('Starting HPSA$$$$$$$$$$$$$')
+            self.sendCommand(HPSAstart)
+            return True
+        else: return False
+    def stopHPSA(self):
+        status = self.checkHPSA()
+        if "running" in status.split(' ')[6]:
+            print('Stopping HPSA$$$$$$$$$$$$$')
+            print(self.sendCommand(HPSAstop))
+            time.sleep(10)
+            status = self.checkHPSA()
+            if "running" in status.split(' ')[6]:
+                print('Stopping HPSA$$$$$$$$$$$$$ Second Time')
+                print(self.sendCommand(HPSAstop))
+                time.sleep(10)
+            return True
+        elif "not" in status.split(' ')[6]:
+            print('HPSA is not running , thus exiting**')
+            return True
+        else:return False
 
-    def sftpPut_data(self,local_dir, remote_dir):
+    def importSolution(self):
+        print (self.sendCommand(importSol))
+        time.sleep(5)
         try:
-            self.sftp.chdir(remote_dir)
-        except IOError:
-            self.sftp.mkdir(remote_dir)
+            stat= self.sftp.stat(soldir+'DSP_TDE') or self.sftp.stat(soldir+'DSP')
+            print('Solution Imported and st_size = ',stat.st_size)
+            print('True')
+            return True
 
-        for item in os.listdir(local_dir):
-            print item
-            local_path = os.path.join(local_dir, item)
-            remote_path = remote_dir + '/' + item
+        except IOError,e:
+            print(e)
+            print('False')
+            return False
 
-            if os.path.isdir(local_path):
-                self.sftpPut_data(local_path,remote_path)
-            else:
-                print(local_path)
-                print remote_path
-                self.sftp.put(local_path,remote_path)
+    def deleteSolution(self):
+        print(self.sendCommand(deleteSol))
+        time.sleep(5)
+        try:
+            stat = self.sftp.stat(soldir + 'DSP_TDE') or self.sftp.stat(soldir + 'DSP')
+            return False
 
-        print'******Solution Upload to Test Server Completed Successfully***********'
+        except IOError,e:
+            print(e)
+            return True
 
-    def sendCommand(self, command):
+    def deploySolution(self):
+            print(self.sendCommand(deploySol))
+            time.sleep(5)
+            return True
 
-        # Check if connection is made previously
-        if (self.ssh):
-            stdin, stdout, stderr = self.ssh.exec_command(command)
+    def undeploySolution(self):
+            print(self.sendCommand(undeploySol))
+            time.sleep(5)
+            return True
 
-            while not stdout.channel.exit_status_ready():
-                # Print stdout data when available
-                if stdout.channel.recv_ready():
-                    # Retrieve the first 1024 bytes
-                    alldata = stdout.channel.recv(1024)
-                    while stdout.channel.recv_ready():
-                        # Retrieve the next 1024 bytes
-                        alldata += stdout.channel.recv(1024)
+    def startMockservices(self):
+        print(self.sendCommand(startMock))
+        return True
 
-                    # Print as string with utf8 encoding
-                    # print(str(alldata))
-                    return str(alldata)
-        else:
-            print("Connection not opened.")
-            return None
-
-    def checkAppStatus(self):
-        command='/etc/init.d/activator check'
-        return self.sendCommand(command)
-
-
-pull =pullSolution()
-pull.startSSH(remote_ip,remote_uname,remote_pwd)
-# pull.startSSH(ftp_ip,ftp_uname,ftp_pwd)
-# pull.sftpGet_data(remoteFtp_dir,local_dir)
-#pull.sftpPut_data(local_dir,remoteSol_dir)
-#pull.checkAppStatus()
-pull.closeSSH()
+# obj= CIPageObject()
+# obj.startSSH(remote_ip,remote_uname,remote_pwd)
+# obj.importSolution()
