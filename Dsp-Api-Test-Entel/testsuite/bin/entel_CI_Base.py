@@ -14,9 +14,12 @@ class BaseDeployment():
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         #ssh.connect('15.213.54.219',username="root",password="hwroot")
         self.ssh.connect(ip, username=uname, password=pwd)
-        print('SSH Connection Started************')
+        print('SSH Connection Started for %s************'%ip)
         self.sftp = self.ssh.open_sftp()
         print('SFTP Connection Opened************')
+        if(self.ssh):
+            return True
+        else:return False
 
     def closeSSH(self):
         self.sftp.close()
