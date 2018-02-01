@@ -1,7 +1,9 @@
 from testsuite.bin.entel_CI_Base import *
 import ConfigParser
+import os
 from subprocess import call
 import time
+from stat import S_ISDIR
 
 config = ConfigParser.RawConfigParser()
 filepath = '..\deployData.txt'
@@ -42,16 +44,45 @@ class CIPageObject(BaseDeployment):
 
     tde_sol = config.get('StaticData', 'tde_sol')
     leg_sol = config.get('StaticData', 'leg_sol')
+    solname_leg= config.get('StaticData', 'solname_leg')
+    solname_tde = config.get('StaticData', 'solname_tde')
 
-    def downloadSolution(self):
-       self.startSSH(self.ftp_ip,self.ftp_uname, self.ftp_pwd)
-       self.sftpGet_data(self.remoteFtp_dir,self.local_dir)
-       self.closeSSH()
+    def downloadSolution(self,solname):
+        self.startSSH(self.ftp_ip,self.ftp_uname, self.ftp_pwd)
+        if(self.ssh):
+            self.sftpGet_data(self.remoteFtp_dir,self.local_dir)
+            for subdir, dirs, files in os.walk(self.local_dir):
+                for file in files:
+                    if file in solname:
+                        print('Solution Downloaded and Checked ****')
+                        return True
+            else: return False
+        else:return False
 
-    def uploadSolution(self):
+    def uploadSolution(self,solname):
         self.startSSH(self.remote_ip,self.remote_uname,self.remote_pwd)
-        self.sftpPut_data(self.local_dir,self.remoteSol_dir)
-        self.closeSSH()
+        if self.ssh:
+            self.sftpPut_data(self.local_dir,self.remoteSol_dir)
+            if self.doloop(self.remoteSol_dir,solname):
+                print('Solution Uploaded and Checked ****')
+                return True
+            else:return False
+        return False
+
+    def doloop(self,dir,solname):
+        try:
+            for item in self.sftp.listdir_attr(dir):
+                if S_ISDIR(item.st_mode):
+                    for file in self.sftp.listdir(dir):
+                        folder = dir + file
+                        self.doloop(folder,solname)
+                elif solname in str(item) :
+                    print(item)
+                    break
+        except IOError as e:
+            print(e)
+            return False
+        else:return True
 
     def checkHPSA(self):
         print(self.sendCommand(self.HPSAcheck))
