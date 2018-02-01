@@ -45,37 +45,36 @@ class BaseDeployment():
             self.sftp.mkdir(remote_dir)
 
         for item in os.listdir(local_dir):
-            print item
+            print (item)
             local_path = os.path.join(local_dir, item)
             remote_path = remote_dir + '/' + item
 
             if os.path.isdir(local_path):
                 self.sftpPut_data(local_path,remote_path)
             else:
-                print(local_path)
-                print remote_path
                 self.sftp.put(local_path,remote_path)
 
-        print'******Solution Upload to Test Server Completed Successfully***********'
+        print('******File Upload to Test Server in Progress ***********')
 
     def sendCommand(self, command):
 
         # Check if connection is made previously
         if (self.ssh):
             stdin, stdout, stderr = self.ssh.exec_command(command)
+            return stdout.read()
 
-            while not stdout.channel.exit_status_ready():
-                # Print stdout data when available
-                if stdout.channel.recv_ready():
-                    # Retrieve the first 1024 bytes
-                    alldata = stdout.channel.recv(1024)
-                    while stdout.channel.recv_ready():
-                        # Retrieve the next 1024 bytes
-                        alldata += stdout.channel.recv(1024)
-
-                    # Print as string with utf8 encoding
-                    # print(str(alldata))
-                    return str(alldata)
+            # while not stdout.channel.exit_status_ready():
+            #     # Print stdout data when available
+            #     if stdout.channel.recv_ready():
+            #         # Retrieve the first 1024 bytes
+            #         alldata = stdout.channel.recv(1024)
+            #         while stdout.channel.recv_ready():
+            #             # Retrieve the next 1024 bytes
+            #             alldata += stdout.channel.recv(1024)
+            #
+            #         # Print as string with utf8 encoding
+            #         # print(str(alldata))
+            #         return str(alldata)
         else:
             print("Connection not opened.")
             return None
