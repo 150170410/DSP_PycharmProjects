@@ -1,0 +1,39 @@
+[StaticData]
+ftp_ip=15.154.114.108
+ftp_uname=root
+ftp_pwd=iso*help
+remoteFtp_dir=/home/dspadmin/release/QA/29012018/
+
+local_dir=C:/DSP/DSP_Entel/ReleaseDemo21/
+
+remote_ip=15.213.50.68
+remote_uname=root
+remote_pwd=hwroot
+remoteSol_dir=/releases/ReleaseDemo21/
+
+temp_sol_path=/var/lib/jenkins/jenkinstest/Solutions/
+imp_sol_path=/home/dspadmin/Dsp_script/
+
+HPSAcheck = /etc/init.d/activator check
+HPSAstart = /etc/init.d/activator start
+HPSAstop = /etc/init.d/activator stop
+
+startMock = /home/dspadmin/scripts/checkSaopProcess.sh
+
+hpsabinPath = /opt/OV/ServiceActivator/bin/
+soldir = /opt/OV/ServiceActivator/solutions/
+
+importSol_tde = /opt/OV/ServiceActivator/bin/deploymentmanager  ImportSolution -file /releases/Release_4.6/29012018/TDE/DSP_TDE.zip
+deleteSol_tde = /opt/OV/ServiceActivator/bin/deploymentmanager DeleteSolution -solutionName DSP_TDE
+deploySol_tde = /opt/OV/ServiceActivator/bin/deploymentmanager DeploySolution -solutionName DSP_TDE -deploymentFile  /opt/OV/ServiceActivator/solutions/DSP_TDE/deploy.xml -dbUser hpsa -dbPassword password
+undeploySol_tde = /opt/OV/ServiceActivator/bin/deploymentmanager  UndeploySolution -solutionName DSP_TDE -dbUser hpsa -dbPassword password -dbHost 15.213.50.68 -db ENTELDSP -dbPort 1521
+
+importSol_leg = /opt/OV/ServiceActivator/bin/deploymentmanager  ImportSolution -file /releases/Release_4.6/29012018/Legacy/DSP.zip
+deleteSol_leg = /opt/OV/ServiceActivator/bin/deploymentmanager DeleteSolution -solutionName DSP
+deploySol_leg = /opt/OV/ServiceActivator/bin/deploymentmanager DeploySolution -solutionName DSP -deploymentFile  /opt/OV/ServiceActivator/solutions/DSP/deploy.xml -dbUser hpsa -dbPassword password
+undeploySol_leg = /opt/OV/ServiceActivator/bin/deploymentmanager  UndeploySolution -solutionName DSP -dbUser hpsa -dbPassword password -dbHost 15.213.50.68 -db ENTELDSP -dbPort 1521
+
+tde_sol = DSP_TDE
+leg_sol = DSP
+solname_leg = DSP.zip
+solname_tde = DSP_TDE.zip
