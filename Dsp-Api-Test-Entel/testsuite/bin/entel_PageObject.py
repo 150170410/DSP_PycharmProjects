@@ -36,6 +36,10 @@ class TestPosts(BaseTest):
         self.uri_contractacceptance = config['main']['contractacceptance']
         self.uri_biometricws = config['main']['biometricws']
         self.post_biometricws = ast.literal_eval(config['main']['post_biometricws'])
+        self.uri_checknobiocounter = config['main']['checknobiocounter']
+        self.uri_requestnobio = config['main']['requestnobio']
+        self.uri_reportnobio = config['main']['reportnobio']
+        self.post_reportnobio = ast.literal_eval(config['main']['post_reportnobio'])
         self.uri_requestorder = config['main']['requestorder']
         self.uri_dataporta= config['main']['dataporta']
         self.post_dataporta= ast.literal_eval(config['main']['post_dataporta'])
@@ -196,8 +200,9 @@ class TestPosts(BaseTest):
     def contractacceptance(self,txn_id):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
         self.lg('%s Triggered' % self._testID)
+        tempContract=self.uri_contractacceptance %txn_id
 
-        response= self.get_request_response(uri=self.uri_contractacceptance + '/' + txn_id + '/' + '/1/1')
+        response= self.get_request_response(uri=tempContract)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
@@ -215,6 +220,42 @@ class TestPosts(BaseTest):
         self.assertTrue(response.ok)
         self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
         self.assertEqual(self.checkOprID(txn_id), 13)
+        return response
+
+    def checknobiocounter(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
+        self.lg('%s Triggered' % self._testID)
+        tempbio_uri = self.uri_checknobiocounter % txn_id
+
+        response = self.get_request_response(uri=tempbio_uri)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.ok)
+        self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 14)
+        return response
+
+    def requestnobio(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
+        self.lg('%s Triggered' % self._testID)
+        tempbio_uri = self.uri_requestnobio % txn_id
+
+        response = self.get_request_response(uri=tempbio_uri)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.ok)
+        self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 15)
+        return response
+
+    def reportnobio(self,txn_id):
+        """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.*                """
+        self.lg('%s Triggered' % self._testID)
+        self.post_reportnobio.update({'txn_ID': txn_id})
+
+        response = self.post_request_response(uri=self.uri_reportnobio, data=self.post_reportnobio)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.ok)
+        self.assertEqual(response.text.split(',')[0].split(':')[1], '0', response.text.split(',')[1])
+        self.assertEqual(self.checkOprID(txn_id), 16)
         return response
 
     def requestorder(self,txn_id):
