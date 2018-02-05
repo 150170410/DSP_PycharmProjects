@@ -23,8 +23,6 @@ class CIPageObject(BaseDeployment):
     remote_pwd = config.get('StaticData', 'remote_pwd')
     remoteSol_dir = config.get('StaticData', 'remoteSol_dir')
 
-    imp_sol_path = config.get('StaticData', 'imp_sol_path')
-
     HPSAcheck = config.get('StaticData', 'HPSAcheck')
     HPSAstart = config.get('StaticData', 'HPSAstart')
     HPSAstop = config.get('StaticData', 'HPSAstop')
@@ -46,25 +44,30 @@ class CIPageObject(BaseDeployment):
     leg_sol = config.get('StaticData', 'leg_sol')
     solname_leg= config.get('StaticData', 'solname_leg')
     solname_tde = config.get('StaticData', 'solname_tde')
+    newsoldir = config.get('StaticData', 'newsoldir')
 
-    def downloadSolution(self,solname):
+    def downloadSolution(self,solname,newsoldir):
         self.startSSH(self.ftp_ip,self.ftp_uname, self.ftp_pwd)
         if(self.ssh):
-            self.sftpGet_data(self.remoteFtp_dir,self.local_dir)
-            for subdir, dirs, files in os.walk(self.local_dir):
+            loclatempdir=self.local_dir %newsoldir
+            self.sftpGet_data(self.remoteFtp_dir,loclatempdir)
+            for subdir, dirs, files in os.walk(loclatempdir):
                 for file in files:
                     if file in solname:
-                        print('Solution Downloaded and Checked ****')
+                        print('Solution Downloaded and Checked in : %s* Successfully' %loclatempdir)
                         return True
             else: return False
         else:return False
 
-    def uploadSolution(self,solname):
+    def uploadSolution(self,solname,newsoldir):
         self.startSSH(self.remote_ip,self.remote_uname,self.remote_pwd)
         if self.ssh:
-            self.sftpPut_data(self.local_dir,self.remoteSol_dir)
-            if self.doloop(self.remoteSol_dir,solname):
-                print('Solution Uploaded and Checked ****')
+            loclatempdir = self.local_dir % newsoldir
+            remote_tempdir=self.remoteSol_dir %newsoldir
+
+            self.sftpPut_data(loclatempdir,remote_tempdir)
+            if self.doloop(remote_tempdir,solname):
+                print('Solution Uploaded and Checked in : %s* Successfully' %remote_tempdir)
                 return True
             else:return False
         return False
@@ -122,8 +125,9 @@ class CIPageObject(BaseDeployment):
         except AttributeError as e:
             print(e)
             return False
-    def importSolution(self,importSol,soln):
-        print (self.sendCommand(importSol))
+    def importSolution(self,importSol,soln,newsoldir):
+        temp_command=importSol %newsoldir
+        print (self.sendCommand(temp_command))
         time.sleep(5)
         try:
             stat= self.sftp.stat(self.soldir+soln)
@@ -163,4 +167,3 @@ class CIPageObject(BaseDeployment):
     def startMockservices(self):
         print(self.sendCommand(self.startMock))
         return True
-
