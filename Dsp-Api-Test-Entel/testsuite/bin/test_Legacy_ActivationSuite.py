@@ -73,19 +73,37 @@ class ValidateLegacyVenta(TestPosts):
         response = self.contractacceptance(txn_id)
         self.lg(response.text)
 
-    def test_11biometricws(self):
-        """ test_11biometricws: Test case for test view post using GET /posts/{id}.                                 """
-        try:
-            response = self.biometricws(txn_id)
-            self.lg(response.text)
+    # def test_11biometricws(self):
+    #     """ test_11biometricws: Test case for test view post using GET /posts/{id}.                                 """
+    #     try:
+    #         response = self.biometricws(txn_id)
+    #         self.lg(response.text)
+    #
+    #     except AssertionError, e:
+    #         self.lg(e.message)
+    #         self.lg("Re-triggering since reponse code is not as expected")
+    #         response = self.biometricws(txn_id)
+    #         self.lg(response.text)
 
-        except AssertionError, e:
-            self.lg(e.message)
-            self.lg("Re-triggering since reponse code is not as expected")
-            response = self.biometricws(txn_id)
-            self.lg(response.text)
+    def test_13checknobiocounter(self):
+        """ test_13checknobiocounter: Test case for test view post using GET /posts/{id}.                                 """
 
-    def test_12requestorder(self):
+        response = self.checknobiocounter(txn_id)
+        self.lg(response.text)
+
+    def test_14requestnobio(self):
+        """ test_14requestnobio: Test case for test view post using GET /posts/{id}.                                 """
+
+        response = self.requestnobio(txn_id)
+        self.lg(response.text)
+
+    def test_15reportnobio(self):
+        """ test_15reportnobio: Test case for test view post using GET /posts/{id}.                                 """
+
+        response = self.reportnobio(txn_id)
+        self.lg(response.text)
+
+    def test_16requestorder(self):
         """ test_12requestorder: Test case for test view post using GET /posts/{id}.                                 """
 
         response = self.requestorder(txn_id)
