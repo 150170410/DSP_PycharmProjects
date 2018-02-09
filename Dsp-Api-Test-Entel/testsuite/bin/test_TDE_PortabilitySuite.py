@@ -11,104 +11,87 @@ class ValidateTDEPortability(TestPosts):
         self.tarPlan = config['main']['tarplan']
         self.legacy_localzn = config['main']['legacy_localzn']
         self.tde_localzn = config['main']['tde_localzn']
+        self.substype = 'POSTPAID'
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
-
         # response=self.loginuser()
-        # self.lg(response.text)
 
-    def test_02optionMenu(self):
-        """ test_02optionMenu: Test case for test view post using GET /posts/{id}.                          """
 
+    def test_02transactionquery(self):
+        """ test_02transactionquery: Test case for test view post using GET /posts/{id}.                                 """
+        self.transactionquery(self.portedMsisdn)
+
+    def test_03optionMenu(self):
+        """ test_03optionMenu: Test case for test view post using GET /posts/{id}.                          """
         global txn_id
         response = self.optionmenu(self.opType)
         txn_id = response.text.split(',')[2].split(':')[1].split('"')[1]
-        self.lg(response.text)
 
-    def test_03localizationnetw(self):
-        """ test_03localizationnetw: Test case for test view post using GET /posts/{id}.                                 """
+    def test_04localizationnetw(self):
+        """ test_04localizationnetw: Test case for test view post using GET /posts/{id}.                                 """
+        self.localizationnetw(txn_id,self.tde_localzn)
 
-        response=self.localizationnetw(txn_id,self.tde_localzn)
-        self.lg(response.text)
+    def test_05portabilityquery(self):
+        """ test_05portabilityquery: Test case for test view post using GET /posts/{id}.                                 """
+        self.portabilityquery(txn_id,self.portedMsisdn,self.substype)
 
 
-    def test_04verifyresourceid(self):
-        """ test_04verifyresourceid: Test case for test view post using GET /posts/{id}.                                 """
+    def test_06portaqueryresult(self):
+        """ test_06portaqueryresult: Test case for test view post using GET /posts/{id}.                                 """
+        self.portaqueryresult(self.portedMsisdn, self.portStatus, txn_id)
 
-        response = self.verifyresourceid(txn_id, self.ICCID_subscriber)
-        self.lg(response.text)
+    def test_07verifycustomerdata(self):
+        """ test_07verifycustomerdata: Test case for test view post using GET /posts/{id}.                                 """
+        self.verifycustomerdata(txn_id)
 
-    def test_05id_document(self):
-        """ test_05id_document: Test case for test view post using GET /posts/{id}.                                 """
+    def test_08verifyresourceid(self):
+        """ test_08verifyresourceid: Test case for test view post using GET /posts/{id}.                                 """
+        self.verifyresourceid(txn_id, self.ICCID_subscriber)
+
+    def test_09id_document(self):
+        """ test_09id_document: Test case for test view post using GET /posts/{id}.                                 """
         try:
-            response = self.id_document(txn_id)
-            self.lg(response.text)
+          self.id_document(txn_id)
 
         except AssertionError, e:
             self.lg(e.message)
             self.lg("Re-triggering since reponse code is not as expected")
-            response = self.id_document(txn_id)
-            self.lg(response.text)
+            self.id_document(txn_id)
 
-    def test_06populationcenter(self):
-        """ test_06populationcenter: Test case for test view post using GET /posts/{id}.                                 """
+    def test_10populationcenter(self):
+        """ test_10populationcenter: Test case for test view post using GET /posts/{id}.                                 """
+        self.populationcenter(txn_id)
 
-        response=self.populationcenter(txn_id)
-        self.lg(response.text)
+    def test_11getplantariff(self):
+        """ test_11getplantariff: Test case for test view post using GET /posts/{id}.                                 """
+        self.getplantariff(txn_id,self.opType)
 
-    def test_07dataporta(self):
-        """ test_07dataporta: Test case for test view post using GET /posts/{id}.                                 """
+    def test_12selectplantariff(self):
+        """ test_13selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
+        self.selectplantariff(txn_id,self.tarPlan)
 
-        response = self.dataporta(txn_id,self.portedMsisdn)
-        self.lg(response.text)
+    def test_13requestcontract(self):
+        """ test_13requestcontract: Test case for test view post using GET /posts/{id}.                                 """
+        self.requestcontract(txn_id,self.opType)
 
-    def test_08getplantariff(self):
-        """ test_08getplantariff: Test case for test view post using GET /posts/{id}.                                 """
+    def test_14contractacceptance(self):
+        """ test_14contractacceptance: Test case for test view post using GET /posts/{id}.                                 """
+        self.contractacceptance(txn_id)
 
-        response=self.getplantariff(txn_id,self.opType)
-        self.lg(response.text)
-
-    def test_09selectplantariff(self):
-        """ test_09selectplantariff: Test case for test view post using GET /posts/{id}.                                 """
-
-        response=self.selectplantariff(txn_id,self.tarPlan)
-        self.lg(response.text)
-
-    def test_10requestcontract(self):
-        """ test_10requestcontract: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.requestcontract(txn_id,self.opType)
-        self.lg(response.text)
-
-    def test_11contractacceptance(self):
-        """ test_11contractacceptance: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.contractacceptance(txn_id)
-        self.lg(response.text)
-
-
-    def test_12biometricws(self):
-        """ test_12biometricws: Test case for test view post using GET /posts/{id}.                                 """
+    def test_15biometricws(self):
+        """ test_15biometricws: Test case for test view post using GET /posts/{id}.                                 """
 
         try:
-            response = self.biometricws(txn_id)
-            self.lg(response.text)
+            self.biometricws(txn_id)
 
         except AssertionError, e:
             self.lg(e.message)
             self.lg("Re-triggering since reponse code is not as expected")
-            response = self.biometricws(txn_id)
-            self.lg(response.text)
+            self.biometricws(txn_id)
 
-    def test_13requestorder(self):
-        """ test_13requestorder: Test case for test view post using GET /posts/{id}.                                 """
+    def test_16requestorder(self):
+        """ test_16requestorder: Test case for test view post using GET /posts/{id}.                                 """
+        self.requestorder(txn_id)
 
-        response = self.requestorder(txn_id)
-        self.lg(response.text)
 
-    def test_14portaqueryresult(self):
-        """ test_14portaqueryresult: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.portaqueryresult(self.portedMsisdn,self.portStatus,txn_id)
-        self.lg(response.text)
