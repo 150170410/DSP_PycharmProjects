@@ -6,10 +6,16 @@ class ValidateTDESimSwap(TestPosts):
         super(ValidateTDESimSwap, self).__init__(*args, **kwargs)
 
         self.opType = 'Sim Swap'
-        self.ICCID_subscriber = config['main']['iccid_subscriber']
-        self.tarPlan = config['main']['tarplan']
-        self.legacy_localzn = config['main']['legacy_localzn']
-        self.tde_localzn = config['main']['tde_localzn']
+        # self.ICCID_subscriber = config['main']['iccid_subscriber']
+        # self.tarPlan = config['main']['tarplan']
+        # self.legacy_localzn = config['main']['legacy_localzn']
+        # self.tde_localzn = config['main']['tde_localzn']
+
+        self.ICCID_subscriber = sdata.iccid_subscriber
+        self.tarPlan = sdata.tarplan
+        self.legacy_localzn = sdata.legacy_localzn
+        self.tde_localzn = sdata.tde_localzn
+
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
@@ -52,9 +58,14 @@ class ValidateTDESimSwap(TestPosts):
 
     def test_06swapreason(self):
         """ test_06swapreason: Test case for test view post using GET /posts/{id}.                                 """
-
-        response=self.swapreason(txn_id)
-        self.lg(response.text)
+        try:
+            response=self.swapreason(txn_id)
+            self.lg(response.text)
+        except AssertionError, e:
+            self.lg(e.message)
+            self.lg("Re-triggering since reponse code is not as expected")
+            response = self.swapreason(txn_id)
+            self.lg(response.text)
 
     def test_07requestcontract(self):
         """ test_07requestcontract: Test case for test view post using GET /posts/{id}.                                 """
