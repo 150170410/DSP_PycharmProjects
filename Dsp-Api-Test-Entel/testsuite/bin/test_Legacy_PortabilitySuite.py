@@ -6,12 +6,20 @@ class ValidateLegacyPortability(TestPosts):
         super(ValidateLegacyPortability, self).__init__(*args, **kwargs)
 
         self.opType = 'Portability'
-        self.ICCID_subscriber = config['main']['iccid_subscriber']
-        self.portedMsisdn = config['main']['portedmsisdn']
-        self.portStatus = config['main']['portstatus']
-        self.tarPlan = config['main']['tarplan']
-        self.legacy_localzn = config['main']['legacy_localzn']
-        self.tde_localzn = config['main']['tde_localzn']
+        self.substype = '0'
+        # self.ICCID_subscriber = config['main']['iccid_subscriber']
+        # self.portedMsisdn = config['main']['portedmsisdn']
+        # self.portStatus = config['main']['portstatus']
+        # self.tarPlan = config['main']['tarplan']
+        # self.legacy_localzn = config['main']['legacy_localzn']
+        # self.tde_localzn = config['main']['tde_localzn']
+
+        self.ICCID_subscriber = sdata.iccid_subscriber
+        self.portedMsisdn = sdata.portedmsisdn
+        self.portStatus = sdata.portstatus
+        self.tarPlan = sdata.tarplan
+        self.legacy_localzn = sdata.legacy_localzn
+        self.tde_localzn = sdata.tde_localzn
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
@@ -36,7 +44,7 @@ class ValidateLegacyPortability(TestPosts):
     def test_04portabilityquery(self):
         """ test_04portabilityquery: Test case for test view post using GET /posts/{id}.                                 """
 
-        response=self.portabilityquery(txn_id,self.portedMsisdn)
+        response=self.portabilityquery(txn_id,self.portedMsisdn,self.substype)
         self.lg(response.text)
 
     def test_05sendportabilityresult(self):
