@@ -1,12 +1,13 @@
 import logging
+from logging.handlers import TimedRotatingFileHandler
 import time
 import os
 import json
 import requests
 from unittest import TestCase
-from testconfig import config
 import cx_Oracle
 import smtplib
+
 
 def setup_module():
     print(__name__, ': setup_module() ~~~~~~~~~~~~~~~~~~~~~~')
@@ -18,20 +19,18 @@ def teardown_module():
 
 class BaseTest(TestCase):
 
-    logger=logging.getLogger('api_testsuite')
-    if not os.path.exists('logs/api_testsuite.log'):os.mkdir('logs')
-    handler=logging.FileHandler('logs/api_testsuite.log')
+    logger=logging.getLogger('entel_test')
+    if not os.path.exists('logs/entel_test.log'):os.mkdir('logs')
+    handler=TimedRotatingFileHandler('logs/entel_test.log',
+                                     when="d",interval=1,backupCount=0)
     formatter=logging.Formatter('%(asctime)s [%(testid)s] [%(levelname)s] %(message)s',
                                   '%d/%m/%Y %I:%M:%S %p')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     logger.setLevel(logging.DEBUG)
 
-
-
     def __init__(self, *args, **kwargs):
         super(BaseTest, self).__init__(*args, **kwargs)
-
 
 
     @classmethod
@@ -50,7 +49,7 @@ class BaseTest(TestCase):
     def setUp(self):
         self._testID = self._testMethodName
         self._startTime = time.time()
-        self._logger = logging.LoggerAdapter(logging.getLogger('api_testsuite'),
+        self._logger = logging.LoggerAdapter(logging.getLogger('entel_test'),
                                              {'testid': self.shortDescription().split(':')[0] or self._testID})
         self.lg('Testcase %s Started at %s' % (self._testID, self._startTime))
         # self.session = requests.Session()
@@ -83,11 +82,15 @@ class BaseTest(TestCase):
                                  allow_redirects=False)
 
     def send_mail(self):
+
+        subject = 'Entel Test Results**'
         text = '''debasis.dash@hpe.com
-            Subject: testin
-            This is a test '''
+                Subject: testin
+                This is a test '''
+
         email_from = 'entel_test@hpe.com'
         email_to = 'debasis.dash@hpe.com'
-
+        message = 'Subject: {}\n\n{}'.format(subject, text)
         server = smtplib.SMTP('15.241.48.71')
-        server.sendmail(email_from, email_to, text)
+        server.sendmail(email_from, email_to, message)
+        server.quit()
