@@ -1,20 +1,12 @@
 
-from  testsuite.bin.entel_PageObject import *
+from  testsuite.bin.entel_PageObject import TestPosts,sdata
 
 class ValidateLegacyVenta(TestPosts):
     def __init__(self,*args, **kwargs):
         super(ValidateLegacyVenta, self).__init__(*args, **kwargs)
 
+        self.url = sdata.legacy_url
         self.opType = 'venta'
-        # self.ICCID_subscriber = config['main']['iccid_subscriber']
-        # self.tarPlan = config['main']['tarplan']
-        # self.legacy_localzn = config['main']['legacy_localzn']
-        # self.tde_localzn = config['main']['tde_localzn']
-
-        self.ICCID_subscriber = sdata.iccid_subscriber
-        self.tarPlan = sdata.tarplan
-        self.legacy_localzn = sdata.legacy_localzn
-        self.tde_localzn = sdata.tde_localzn
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
@@ -59,38 +51,18 @@ class ValidateLegacyVenta(TestPosts):
         """ test_10contractacceptance: Test case for test view post using GET /posts/{id}.                                 """
         self.contractacceptance(txn_id)
 
-    # def test_11biometricws(self):
-    #     """ test_11biometricws: Test case for test view post using GET /posts/{id}.                                 """
-    #     try:
-    #         response = self.biometricws(txn_id)
-    #         self.lg(response.text)
-    #
-    #     except AssertionError, e:
-    #         self.lg(e.message)
-    #         self.lg("Re-triggering since reponse code is not as expected")
-    #         response = self.biometricws(txn_id)
-    #         self.lg(response.text)
+    def test_11checknobiocounter(self):
+        """ test_11checknobiocounter: Test case for test view post using GET /posts/{id}.                                 """
+        self.checknobiocounter(txn_id)
 
-    def test_13checknobiocounter(self):
-        """ test_13checknobiocounter: Test case for test view post using GET /posts/{id}.                                 """
-        response = self.checknobiocounter(txn_id)
+    def test_12requestnobio(self):
+        """ test_12requestnobio: Test case for test view post using GET /posts/{id}.                                 """
+        self.requestnobio(txn_id)
 
-    def test_14requestnobio(self):
-        """ test_14requestnobio: Test case for test view post using GET /posts/{id}.                                 """
+    def test_13reportnobio(self):
+        """ test_13reportnobio: Test case for test view post using GET /posts/{id}.                                 """
+        self.reportnobio(txn_id)
 
-        response = self.requestnobio(txn_id)
-        self.lg(response.text)
-
-    def test_15reportnobio(self):
-        """ test_15reportnobio: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.reportnobio(txn_id)
-        self.lg(response.text)
-
-    def test_16requestorder(self):
-        """ test_12requestorder: Test case for test view post using GET /posts/{id}.                                 """
-
-        response = self.requestorder(txn_id)
-        self.lg(response.text)
-
-
+    def test_14requestorder(self):
+        """ test_14requestorder: Test case for test view post using GET /posts/{id}.                                 """
+        self.requestorder(txn_id)

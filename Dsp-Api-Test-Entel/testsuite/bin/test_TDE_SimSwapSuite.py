@@ -1,21 +1,11 @@
-
-from  testsuite.bin.entel_PageObject import *
+from  testsuite.bin.entel_PageObject import TestPosts,sdata
 
 class ValidateTDESimSwap(TestPosts):
     def __init__(self,*args, **kwargs):
         super(ValidateTDESimSwap, self).__init__(*args, **kwargs)
 
+        self.url = sdata.tde_url
         self.opType = 'Sim Swap'
-        # self.ICCID_subscriber = config['main']['iccid_subscriber']
-        # self.tarPlan = config['main']['tarplan']
-        # self.legacy_localzn = config['main']['legacy_localzn']
-        # self.tde_localzn = config['main']['tde_localzn']
-
-        self.ICCID_subscriber = sdata.iccid_subscriber
-        self.tarPlan = sdata.tarplan
-        self.legacy_localzn = sdata.legacy_localzn
-        self.tde_localzn = sdata.tde_localzn
-
 
     def test_01loginUser(self):
         """ test_01loginUser: Test case for test view post using GET /posts/{id}.                          """
