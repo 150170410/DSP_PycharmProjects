@@ -6,6 +6,7 @@ import requests
 from unittest import TestCase
 from testconfig import config
 import cx_Oracle
+import smtplib
 
 def setup_module():
     print(__name__, ': setup_module() ~~~~~~~~~~~~~~~~~~~~~~')
@@ -81,3 +82,12 @@ class BaseTest(TestCase):
         return self.session.post(self.url + uri, data=json.dumps(data), headers=headers, timeout=30,
                                  allow_redirects=False)
 
+    def send_mail(self):
+        text = '''debasis.dash@hpe.com
+            Subject: testin
+            This is a test '''
+        email_from = 'entel_test@hpe.com'
+        email_to = 'debasis.dash@hpe.com'
+
+        server = smtplib.SMTP('15.241.48.71')
+        server.sendmail(email_from, email_to, text)
