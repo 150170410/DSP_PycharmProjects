@@ -9,7 +9,13 @@ class TestPosts(BaseTest):
 
     def __init__(self, *args, **kwargs):
         super(TestPosts, self).__init__(*args, **kwargs)
-        self.url = sdata.url
+
+        self.ICCID_subscriber = sdata.iccid_subscriber
+        self.portedMsisdn = sdata.portedmsisdn
+        self.portStatus = sdata.portstatus
+        self.tarPlan = sdata.tarplan
+        self.legacy_localzn = sdata.legacy_localzn
+        self.tde_localzn = sdata.tde_localzn
 
     def loginuser(self):
         """ EntelRegressionSuite: Test case for test view post using GET /posts/{id}.                """
